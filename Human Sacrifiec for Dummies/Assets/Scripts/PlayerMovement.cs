@@ -36,6 +36,6 @@ public class PlayerMovement : MonoBehaviour
             targetPosition = startPosition;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5);
+        transform.position = targetPosition;
     }
 }
