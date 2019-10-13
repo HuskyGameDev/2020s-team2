@@ -7,7 +7,12 @@ public class SelectAbility : MonoBehaviour
 {
 
     public Button Ability1;
-    
+
+    private void Start()
+    {
+        
+    }
+
     private void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
