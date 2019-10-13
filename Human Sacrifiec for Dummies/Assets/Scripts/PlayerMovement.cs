@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-
         targetPosition.x = Mathf.Round(gameObject.transform.position.x);
         targetPosition.y = Mathf.Floor(gameObject.transform.position.y) + 0.5f;
         startPosition = targetPosition;
@@ -25,15 +24,6 @@ public class PlayerMovement : MonoBehaviour
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.x = Mathf.Round(targetPosition.x);
             targetPosition.y = Mathf.Floor(targetPosition.y) + 0.5f;
-        }
-        float magnitude = Vector2.Distance(startPosition, targetPosition);
-        if (magnitude <= 3)
-        {
-
-        }
-        else
-        {
-            targetPosition = startPosition;
         }
 
         transform.position = targetPosition;
