@@ -20,6 +20,9 @@ public class SelectAbility : MonoBehaviour
     public Button Ability7;
     public Button Reset;
     public Button Confirm;
+    public Text Chosen1;
+    public Text Chosen2;
+    public Text Chosen3;
 
     //Initialize a list for button objects needed to reset them when reset button is pressed.
     public List<Button> buttons;
@@ -43,6 +46,9 @@ public class SelectAbility : MonoBehaviour
         Button ability7 = Ability7.GetComponent<Button>();
         Button reset = Reset.GetComponent<Button>();
         Button confirm = Confirm.GetComponent<Button>();
+        Text chosen1 = Chosen1.GetComponentInChildren<Text>();
+        Text chosen2 = Chosen2.GetComponentInChildren<Text>();
+        Text chosen3 = Chosen3.GetComponentInChildren<Text>();
 
         //add appropriate listeners to the buttons
         ability1.onClick.AddListener(AddOneToBar);
@@ -73,6 +79,7 @@ public class SelectAbility : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
+        updateChosenList();
     }
 
 
@@ -95,6 +102,7 @@ public class SelectAbility : MonoBehaviour
         {
             chosen[2] = abilities[0];
         }
+        updateChosenList();
         Ability1.GetComponent<Button>().interactable = false;
         Debug.Log(chosen[0]);
         Debug.Log(chosen[1]);
@@ -118,6 +126,7 @@ public class SelectAbility : MonoBehaviour
         {
             chosen[2] = abilities[1];
         }
+        updateChosenList();
         Ability2.GetComponent<Button>().interactable = false;
         Debug.Log(chosen[0]);
         Debug.Log(chosen[1]);
@@ -140,6 +149,7 @@ public class SelectAbility : MonoBehaviour
         {
             chosen[2] = abilities[2];
         }
+        updateChosenList();
         Ability3.GetComponent<Button>().interactable = false;
         Debug.Log(chosen[0]);
         Debug.Log(chosen[1]);
@@ -161,6 +171,7 @@ public class SelectAbility : MonoBehaviour
         {
             chosen[2] = abilities[3];
         }
+        updateChosenList();
         Ability4.GetComponent<Button>().interactable = false;
         Debug.Log(chosen[0]);
         Debug.Log(chosen[1]);
@@ -182,6 +193,7 @@ public class SelectAbility : MonoBehaviour
         {
             chosen[2] = abilities[4];
         }
+        updateChosenList();
         Ability5.GetComponent<Button>().interactable = false;
         Debug.Log(chosen[0]);
         Debug.Log(chosen[1]);
@@ -203,6 +215,7 @@ public class SelectAbility : MonoBehaviour
         {
             chosen[2] = abilities[5];
         }
+        updateChosenList();
         Ability6.GetComponent<Button>().interactable = false;
         Debug.Log(chosen[0]);
         Debug.Log(chosen[1]);
@@ -224,9 +237,40 @@ public class SelectAbility : MonoBehaviour
         {
             chosen[2] = abilities[6];
         }
+        updateChosenList();
         Ability7.GetComponent<Button>().interactable = false;
         Debug.Log(chosen[0]);
         Debug.Log(chosen[1]);
         Debug.Log(chosen[2]);
+    }
+
+    void updateChosenList()
+    {
+        if (chosen[0] != null)
+        {
+            Chosen1.text = chosen[0];
+        }
+        else
+        {
+            Chosen1.text = "Ability One";
+        }
+
+        if (chosen[1] != null)
+        {
+            Chosen2.text = chosen[1];
+        }
+        else
+        {
+            Chosen2.text = "Ability Two";
+        }
+
+        if (chosen[2] != null)
+        {
+            Chosen3.text = chosen[2];
+        }
+        else
+        {
+            Chosen3.text = "Ability Three";
+        }
     }
 }
