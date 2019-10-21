@@ -39,6 +39,7 @@ public class GameTiles : MonoBehaviour
                 TileBase = Tilemap.GetTile(localPlace),
                 TilemapMember = Tilemap,
                 Name = localPlace.x + "," + localPlace.y,
+                Occupied = false,
                 Cost = 1 // TODO: Change this with the proper cost from ruletile
             };
 

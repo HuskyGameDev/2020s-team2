@@ -21,4 +21,6 @@ public class WorldTile
     public WorldTile ExploredFrom { get; set; }
 
     public int Cost { get; set; }
+
+    public bool Occupied { get; set; }
 }
