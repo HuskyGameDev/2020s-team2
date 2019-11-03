@@ -25,7 +25,7 @@ public class MainMenuScript : MonoBehaviour
     void PlayOnClick()
     {
         //start game scene
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("ChooseAbility");
     }
 
     void OptionsOnClick()

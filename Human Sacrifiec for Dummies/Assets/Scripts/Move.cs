@@ -14,18 +14,21 @@ public class Move : MonoBehaviour
     // this will record the / a shortest path from start to all positions on map
     public Dictionary<Vector3Int, Vector3Int> pathChart = new Dictionary<Vector3Int, Vector3Int>();
 
+    //used for player movement
     public void BFS(Vector3Int startPos)
     {
+        
         Vector3Int currentPos = startPos;
         Queue<Vector3Int> frontier = new Queue<Vector3Int>();
 
-        distanceChart.Clear();
-        pathChart.Clear();
+        distanceChart.Clear(); //this chart shows distance from startPos
+        pathChart.Clear(); //this chart shows the path to travel from startPos to a specific tile
 
         frontier.Enqueue(currentPos);
         distanceChart.Add(currentPos, 0);
         pathChart.Add(currentPos, startPos);
 
+        //intialization
         var tiles = GameTiles.instance.tiles;
         var worldPoint = new Vector3Int(Mathf.RoundToInt(currentPos.x), Mathf.FloorToInt(currentPos.y), 0);
 
@@ -36,7 +39,7 @@ public class Move : MonoBehaviour
             _tile.TilemapMember.SetColor(_tile.LocalPlace, Color.red);
         }
 
-        // if i stil have places to visit keep going
+        // if I stil have places to visit keep going
         while (frontier.Count > 0)
         {
             // get current position
@@ -61,9 +64,6 @@ public class Move : MonoBehaviour
                             _tile.TilemapMember.SetColor(_tile.LocalPlace, Color.red);
                         }
                     }
-
-                    // more logic can go here
-                    // example: ai stops searching when player is found
                 }
             }
         }
@@ -109,22 +109,23 @@ public class Move : MonoBehaviour
         return neighbors;
     }
 
+    //used for enemy movement
     public Vector3 BFS2(Vector3Int startPos)
     {
         Vector3Int currentPos = startPos;
         Queue<Vector3Int> frontier = new Queue<Vector3Int>();
 
-        distanceChart.Clear();
-        pathChart.Clear();
+        distanceChart.Clear(); //this chart shows distance from startPos
+        pathChart.Clear(); //this chart shows the path to travel from startPos to a specific tile
 
         frontier.Enqueue(currentPos);
         distanceChart.Add(currentPos, 0);
         pathChart.Add(currentPos, startPos);
-
+        // intialization
         var tiles = GameTiles.instance.tiles;
         var worldPoint = new Vector3Int(Mathf.RoundToInt(currentPos.x), Mathf.FloorToInt(currentPos.y), 0);
 
-        // if i stil have places to visit keep going
+        // if I stil have places to visit keep going
         while (frontier.Count > 0)
         {
             // get current position
@@ -140,12 +141,13 @@ public class Move : MonoBehaviour
                     distanceChart.Add(nextPos, 1 + distanceChart[currentPos]);
                     pathChart.Add(nextPos, currentPos);
 
+                    //Searching for the player
                     if (tiles.TryGetValue(nextPos, out _tile))
                     {
                         if (_tile.Occupied)
                         {
                             if(_tile.Player)
-                            {
+                            { //this finds the spot that the enemy wants to move to and returns that
                                 Vector3Int tempPos = nextPos;
                                 while (distanceChart[pathChart[tempPos]] > 3)
                                 {
@@ -158,7 +160,7 @@ public class Move : MonoBehaviour
                 }
             }
         }
-        return startPos;
+        return startPos; //if a path to the player is not found, enemy will not move
     }
 
     

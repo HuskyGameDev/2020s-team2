@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SelectAbility : MonoBehaviour
@@ -86,7 +87,14 @@ public class SelectAbility : MonoBehaviour
     //confirm choices and advance to the next scene
     void confirmButton()
     {
+        if (chosen[2] == null)
+        {
 
+        }
+        else
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 
     //Add the first ability to whichever slot is available in the chosen array
