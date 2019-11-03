@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class PlayerMovement : Move
 {
+    public GameObject playerTurnHandler;
+
     public bool hasSearched = false;
 
     private WorldTile _tile;
@@ -14,10 +16,7 @@ public class PlayerMovement : Move
     public Vector2 startPosition;
 
     // turn system stuff
-    public turnSystemScript TurnSystem;
-    public TurnClass turnClass;
     public bool isTurn = false;
-    public KeyCode moveKey;
 
     private void Start()
     {
@@ -26,16 +25,6 @@ public class PlayerMovement : Move
         targetPosition.y = Mathf.Floor(gameObject.transform.position.y) + 0.5f;
         startPosition = targetPosition;
 
-        // load turn system
-        TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
-
-        foreach(TurnClass tc in TurnSystem.playersGroup)
-        {
-            if(tc.playerGameObject.name == gameObject.name)
-            {
-                turnClass = tc;
-            }
-        }
         var tiles = GameTiles.instance.tiles;
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
@@ -46,9 +35,6 @@ public class PlayerMovement : Move
 
     void Update()
     {
-        // is it my turn
-        isTurn = turnClass.isTurn;
-
         // check if it is your turn
         if (isTurn)
         {
@@ -137,11 +123,16 @@ public class PlayerMovement : Move
 
         // BFS will be called again next turn
         hasSearched = false;
-
-        // turn ends
         isTurn = false;
-        turnClass.isTurn = isTurn;
-        turnClass.wasTurnPrev = true;
 
+        if (gameObject.CompareTag("Player"))
+        {
+            playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasMoved = true;
+        }
+        else
+        {
+            playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().sacrificeHasMoved = true;
+
+        }
     }
 }
