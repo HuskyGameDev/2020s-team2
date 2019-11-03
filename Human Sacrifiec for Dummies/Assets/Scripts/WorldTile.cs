@@ -22,5 +22,9 @@ public class WorldTile
 
     public int Cost { get; set; }
 
+    // is this tile occupied
     public bool Occupied { get; set; }
+
+    //if occupied what is there
+    public bool Player { get; set; }
 }

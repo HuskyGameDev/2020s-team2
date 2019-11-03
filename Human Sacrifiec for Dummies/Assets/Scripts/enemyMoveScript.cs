@@ -17,6 +17,8 @@ public class enemyMoveScript : Move
     public Vector2 targetPosition;
     public Vector2 startPosition;
 
+    public Vector3 moveTo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,7 @@ public class enemyMoveScript : Move
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = true;
+            _tile.Occupied = false;
         }
     }
 
@@ -53,7 +56,7 @@ public class enemyMoveScript : Move
         {
             // convert start position to vector3int for breadth first search
             var bfsStart = new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0);
-            BFS(bfsStart);
+            moveTo = BFS2(bfsStart);
 
             // if your turn go to wait and move
             StartCoroutine("WaitAndMove");
@@ -66,6 +69,9 @@ public class enemyMoveScript : Move
         yield return new WaitForSeconds(1f);
 
         // movement goes here
+        targetPosition.x = Mathf.Round(moveTo.x);
+        targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
+        transform.position = targetPosition;
 
         EndTurn();
 
@@ -92,6 +98,7 @@ public class enemyMoveScript : Move
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = true;
+            _tile.Player = false;
         }
     }
 
