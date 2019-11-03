@@ -40,6 +40,7 @@ public class PlayerMovement : Move
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = true;
+            _tile.Player = true;
         }
     }
 
@@ -107,11 +108,13 @@ public class PlayerMovement : Move
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = false;
+            _tile.Player = false;
         }
         ChangeStartPosition();
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = true;
+            _tile.Player = true;
         }
     }
 

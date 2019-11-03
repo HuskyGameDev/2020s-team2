@@ -108,4 +108,130 @@ public class Move : MonoBehaviour
         // return list
         return neighbors;
     }
+
+    public Vector3 BFS2(Vector3Int startPos)
+    {
+        Vector3Int currentPos = startPos;
+        Queue<Vector3Int> frontier = new Queue<Vector3Int>();
+
+        distanceChart.Clear();
+        pathChart.Clear();
+
+        frontier.Enqueue(currentPos);
+        distanceChart.Add(currentPos, 0);
+        pathChart.Add(currentPos, startPos);
+
+        var tiles = GameTiles.instance.tiles;
+        var worldPoint = new Vector3Int(Mathf.RoundToInt(currentPos.x), Mathf.FloorToInt(currentPos.y), 0);
+
+        // if i stil have places to visit keep going
+        while (frontier.Count > 0)
+        {
+            // get current position
+            currentPos = frontier.Dequeue();
+
+            // iterate through list of all neighbors
+            foreach (Vector3Int nextPos in GetNeighbors2(currentPos))
+            {
+                // has the tile been processed yet
+                if (distanceChart.ContainsKey(nextPos) == false)
+                {
+                    frontier.Enqueue(nextPos);
+                    distanceChart.Add(nextPos, 1 + distanceChart[currentPos]);
+                    pathChart.Add(nextPos, currentPos);
+
+                    if (tiles.TryGetValue(nextPos, out _tile))
+                    {
+                        if (_tile.Occupied)
+                        {
+                            if(_tile.Player)
+                            {
+                                Vector3Int tempPos = nextPos;
+                                while (distanceChart[pathChart[tempPos]] > 3)
+                                {
+                                    tempPos = pathChart[tempPos];
+                                }
+                                return pathChart[tempPos];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return startPos;
+    }
+
+    
+
+    // looks up down left and right and checks if there is a grass tile there.
+    public List<Vector3Int> GetNeighbors2(Vector3Int currentPos)
+    {
+        // make list to be returned
+        List<Vector3Int> neighbors = new List<Vector3Int>();
+
+        // get position where neightbors would be
+        Vector3Int up = new Vector3Int(currentPos.x, currentPos.y + 1, 0);
+        Vector3Int down = new Vector3Int(currentPos.x, currentPos.y - 1, 0);
+        Vector3Int left = new Vector3Int(currentPos.x - 1, currentPos.y, 0);
+        Vector3Int right = new Vector3Int(currentPos.x + 1, currentPos.y, 0);
+
+        var tiles = GameTiles.instance.tiles;
+
+        // if neighbor exists check if space is occupied
+        // if not occupied add to neighbors list
+        if (tiles.TryGetValue(up, out _tile))
+        {
+            if (!_tile.Occupied)
+            {
+                neighbors.Add(up);
+            }
+            else if (_tile.Player)
+            {
+                neighbors.Add(up);
+                return neighbors;
+            }
+        }
+
+        if (tiles.TryGetValue(down, out _tile))
+        {
+            if (!_tile.Occupied)
+            {
+                neighbors.Add(down);
+            }
+            else if (_tile.Player)
+            {
+                neighbors.Add(down);
+                return neighbors;
+            }
+        }
+
+        if (tiles.TryGetValue(left, out _tile))
+        {
+            if (!_tile.Occupied)
+            {
+                neighbors.Add(left);
+            }
+            else if (_tile.Player)
+            {
+                neighbors.Add(left);
+                return neighbors;
+            }
+        }
+
+        if (tiles.TryGetValue(right, out _tile))
+        {
+            if (!_tile.Occupied)
+            {
+                neighbors.Add(right);
+            }
+            else if (_tile.Player)
+            {
+                neighbors.Add(right);
+                return neighbors;
+            }
+        }
+
+        // return list
+        return neighbors;
+    }
 }
