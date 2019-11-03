@@ -42,7 +42,7 @@ public class enemyMoveScript : Move
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = true;
-            _tile.player = false;
+            _tile.Player = false;
         }
     }
 
