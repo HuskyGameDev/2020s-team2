@@ -61,7 +61,9 @@ public class PlayerTurnHandlerScript : MonoBehaviour
 
     // Update is called once per frame
     void TurnEnder()
-    {        
+    {
+        wizardHasMoved = false;
+        sacrificeHasMoved = false;
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
