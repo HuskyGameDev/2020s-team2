@@ -18,7 +18,8 @@ public class turnSystemScript : MonoBehaviour
         UpdateTurns();
     }
 
-    void ResetTurns()
+    //cleans up variables to prepare for next turn
+    void ResetTurns() 
     {
         for (int i = 0; i < playersGroup.Count; i++)
         {
@@ -35,6 +36,7 @@ public class turnSystemScript : MonoBehaviour
         }
     }
 
+    //allows the next entity in the turn order to go
     void UpdateTurns()
     {
         for(int i = 0;i<playersGroup.Count;i++)

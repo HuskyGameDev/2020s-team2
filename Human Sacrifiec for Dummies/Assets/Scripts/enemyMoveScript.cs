@@ -29,7 +29,7 @@ public class enemyMoveScript : Move
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
-
+        //create a turn for the enemy
         foreach (TurnClass tc in TurnSystem.playersGroup)
         {
             if (tc.playerGameObject.name == gameObject.name)
@@ -37,11 +37,12 @@ public class enemyMoveScript : Move
                 turnClass = tc;
             }
         }
+        //set information for starting position tile
         var tiles = GameTiles.instance.tiles;
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = true;
-            _tile.Occupied = false;
+            _tile.player = false;
         }
     }
 
@@ -73,6 +74,9 @@ public class enemyMoveScript : Move
         targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
         transform.position = targetPosition;
 
+        //attack goes here
+
+        //end turn
         EndTurn();
 
         StopCoroutine("WaitAndMove");
@@ -89,12 +93,14 @@ public class enemyMoveScript : Move
     // call this directly before the end turn stuff so that the BFS works corectly
     void PositionUpdate()
     {
+        //updates info for where enemy began turn in tiles
         var tiles = GameTiles.instance.tiles;
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = false;
         }
         ChangeStartPosition();
+        //updates info for new position
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
             _tile.Occupied = true;
