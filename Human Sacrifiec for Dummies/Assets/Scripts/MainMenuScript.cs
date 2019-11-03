@@ -12,6 +12,8 @@ public class MainMenuScript : MonoBehaviour
    
     void Start()
     {
+
+        //get all of the buttons from the scene and add the appropriate listener
         Button play = Play.GetComponent<Button>();
         Button options = Options.GetComponent<Button>();
         Button exit = Exit.GetComponent<Button>();
@@ -22,16 +24,19 @@ public class MainMenuScript : MonoBehaviour
    
     void PlayOnClick()
     {
+        //start game scene
         SceneManager.LoadScene("InGame");
     }
 
     void OptionsOnClick()
     {
+        //start options screen
         SceneManager.LoadScene("Options");
     }
 
     void ExitOnClick()
     {
+        //quit the game
         Application.Quit();
     }
 }

@@ -244,6 +244,7 @@ public class SelectAbility : MonoBehaviour
         Debug.Log(chosen[2]);
     }
 
+    //adds the chosen ability to the list
     void updateChosenList()
     {
         if (chosen[0] != null)
