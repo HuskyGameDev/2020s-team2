@@ -617,10 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersGroup:
-  - playerGameObject: {fileID: 924131777}
-    isTurn: 0
-    wasTurnPrev: 0
-  - playerGameObject: {fileID: 8863650431738870348}
+  - playerGameObject: {fileID: 1241554508}
     isTurn: 0
     wasTurnPrev: 0
   - playerGameObject: {fileID: 2016323656}
@@ -1512,6 +1509,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172193007}
   m_CullTransparentMesh: 0
+--- !u!1 &1241554508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241554510}
+  - component: {fileID: 1241554509}
+  m_Layer: 0
+  m_Name: Player Turn handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1241554509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241554508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7b98d486af7044fbe327cc0eae1f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wizard: {fileID: 924131777}
+  sacrifice: {fileID: 8863650431738870348}
+  endTurn: {fileID: 1341337475}
+  wizardMove: {fileID: 1048991060}
+  sacrificeMove: {fileID: 1412315005}
+  wizardHasMoved: 0
+  sacrificeHasMoved: 0
+  TurnSystem: {fileID: 0}
+  turnClass:
+    playerGameObject: {fileID: 0}
+    isTurn: 0
+    wasTurnPrev: 0
+  isTurn: 0
+--- !u!4 &1241554510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241554508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340456522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,6 +2521,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2795715653739257161, guid: 0c4bc1c781f6e534d823483995e6fb5a,
+        type: 3}
+      propertyPath: playerTurnHandler
+      value: 
+      objectReference: {fileID: 1241554508}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c4bc1c781f6e534d823483995e6fb5a, type: 3}
 --- !u!1 &2016323656
@@ -2859,6 +2917,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2505214233416326869, guid: 6c132d94747659b4bafa250640184cae,
+        type: 3}
+      propertyPath: playerTurnHandler
+      value: 
+      objectReference: {fileID: 1241554508}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c132d94747659b4bafa250640184cae, type: 3}
 --- !u!1001 &5530221543563938087
@@ -2928,6 +2991,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1686119664, guid: 00ad1f13eee068045967bb970349e386, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5530221544080489082, guid: 00ad1f13eee068045967bb970349e386,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2937,10 +3004,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1686119664, guid: 00ad1f13eee068045967bb970349e386, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00ad1f13eee068045967bb970349e386, type: 3}
