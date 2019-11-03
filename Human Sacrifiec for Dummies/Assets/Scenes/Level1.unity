@@ -629,6 +629,8 @@ MonoBehaviour:
   - playerGameObject: {fileID: 2089013463}
     isTurn: 0
     wasTurnPrev: 0
+  camera: {fileID: 1045802853}
+  buttons: []
 --- !u!4 &612589691
 Transform:
   m_ObjectHideFlags: 0
@@ -2991,10 +2993,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1686119664, guid: 00ad1f13eee068045967bb970349e386, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 5530221544080489082, guid: 00ad1f13eee068045967bb970349e386,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -3004,6 +3002,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686119664, guid: 00ad1f13eee068045967bb970349e386, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00ad1f13eee068045967bb970349e386, type: 3}

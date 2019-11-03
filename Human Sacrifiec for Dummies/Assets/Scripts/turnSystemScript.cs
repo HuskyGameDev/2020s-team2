@@ -1,15 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class turnSystemScript : MonoBehaviour
 {
     public List<TurnClass> playersGroup = null;
 
+    public GameObject camera;
+    public List<Button> buttons;
+
     // Start is called before the first frame update
     void Start()
     {
-       ResetTurns();
+
+        Camera cam = camera.GetComponent<Camera>();
+        Button[] btns = cam.GetComponentsInChildren<Button>(true);
+        for (int i = 0; i < btns.Length; i++)
+        {
+            buttons.Add(btns[i]);
+        }
+        ResetTurns();
     }
 
     // Update is called once per frame
@@ -33,6 +44,10 @@ public class turnSystemScript : MonoBehaviour
                 playersGroup[i].isTurn = false;
                 playersGroup[i].wasTurnPrev = false;
             }
+        }
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            buttons[i].interactable = true;
         }
     }
 
