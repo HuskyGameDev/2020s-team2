@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class turnSystemScript : MonoBehaviour
 {
-    public List<TurnClass> playersGroup;
+    public List<TurnClass> playersGroup = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        ResetTurns();
+       ResetTurns();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class turnSystemScript : MonoBehaviour
     {
         for (int i = 0; i < playersGroup.Count; i++)
         {
-            if (i ==0)
+            if (i == 0)
             {
                 playersGroup[i].isTurn = true;
                 playersGroup[i].wasTurnPrev = false;

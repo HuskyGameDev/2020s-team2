@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour
     public Button Ability3;
     public Button Move;
     public Button EndTurn;
+    public Button MoveSac;
 
     public Text Turn;
 
@@ -32,20 +33,27 @@ public class HUD : MonoBehaviour
         Button ability3 = Ability3.GetComponent<Button>();
         Button move = Move.GetComponent<Button>();
         Button endturn = EndTurn.GetComponent<Button>();
+        Button moveSac = MoveSac.GetComponent<Button>();
         Text name = PlayerName.GetComponent<Text>();
         Text turn = Turn.GetComponent<Text>();
 
         ability1.onClick.AddListener(AbilityOneClick);
         ability2.onClick.AddListener(AbilityTwoClick);
         ability3.onClick.AddListener(AbilityThreeClick);
-        move.onClick.AddListener(MoveOnClick);
+        move.onClick.AddListener(MovePlayerOnClick);
+        moveSac.onClick.AddListener(MoveSacOnClick);
         endturn.onClick.AddListener(EndOnClick);
 
     }
 
-    void MoveOnClick()
+    void MovePlayerOnClick()
     {
         Move.GetComponent<Button>().interactable = false;
+    }
+
+    void MoveSacOnClick()
+    {
+        MoveSac.GetComponent<Button>().interactable = false;
     }
 
     void AbilityOneClick()

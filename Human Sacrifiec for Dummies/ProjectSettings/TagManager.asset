@@ -6,6 +6,7 @@ TagManager:
   tags:
   - button
   - Sacrifice
+  - HUD
   layers:
   - Default
   - TransparentFX
