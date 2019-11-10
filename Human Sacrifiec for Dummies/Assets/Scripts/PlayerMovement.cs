@@ -65,8 +65,8 @@ public class PlayerMovement : Move
                 // go through the BFS distance chart
                 foreach (KeyValuePair<Vector3Int, int> t in distanceChart)
                 {
-                    // if the clicked tile is within 3 spaces move there
-                    if (t.Key == worldPoint && t.Value <= 3)
+                    // if the clicked tile is within their movement range spaces move there
+                    if (t.Key == worldPoint && t.Value <= moveRange)
                     {
 
                         transform.position = targetPosition;
