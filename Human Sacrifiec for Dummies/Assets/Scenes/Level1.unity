@@ -643,7 +643,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &687516326
 GameObject:
@@ -688,7 +688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709417520
 GameObject:
@@ -2350,6 +2350,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
   moveTo: {x: 0, y: 0, z: 0}
+  damage: 1
 --- !u!61 &1857734289
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2587,6 +2588,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
   moveTo: {x: 0, y: 0, z: 0}
+  damage: 1
 --- !u!61 &2016323658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2778,7 +2780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2089013466
 BoxCollider2D:
@@ -2850,6 +2852,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
   moveTo: {x: 0, y: 0, z: 0}
+  damage: 1
 --- !u!1001 &290534407166059239
 PrefabInstance:
   m_ObjectHideFlags: 0
