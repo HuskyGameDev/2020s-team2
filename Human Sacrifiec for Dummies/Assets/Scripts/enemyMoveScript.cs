@@ -173,7 +173,7 @@ public class enemyMoveScript : Move
             {
                 if (_tile.Player)
                 {
-                    //attack down
+                    //attack left
                     hasAttacked = true;
                     EnemyDoDamage(left, damage);
                 }
@@ -188,7 +188,7 @@ public class enemyMoveScript : Move
             {
                 if (_tile.Player)
                 {
-                    // attack left
+                    // attack down
                     hasAttacked = true;
                     EnemyDoDamage(down, damage);
                 }
@@ -209,11 +209,6 @@ public class enemyMoveScript : Move
                 }
             }
         }
-
-        if (!hasAttacked)
-        {
-            print("did not find attack");
-        }
     }
 
     void EnemyDoDamage(Vector3Int position, int damage)
@@ -227,6 +222,7 @@ public class enemyMoveScript : Move
 
         foreach (GameObject go in objects)
         {
+            //check if object is in player layer
             if (go.layer == 10)
             {
                 if (tPos.Equals(go.transform.position))
