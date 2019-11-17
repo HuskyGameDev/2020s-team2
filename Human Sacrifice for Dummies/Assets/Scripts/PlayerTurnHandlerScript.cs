@@ -13,6 +13,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     public Button sacrificeMove;
     public Button staffWhack;
     public Button fiendishWisp;
+    public Button forgottenCurse;
 
     public bool wizardHasMoved = false;
     public bool sacrificeHasMoved = false;
@@ -30,13 +31,15 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         Button wizardmove = wizardMove.GetComponent<Button>();
         Button sacrificemove = sacrificeMove.GetComponent<Button>();
         Button staffwhack = staffWhack.GetComponent<Button>();
-        Button fiendishwisp = fiendishWisp.GetComponent<Button>();
+        //Button fiendishwisp = fiendishWisp.GetComponent<Button>();
+        Button forgottencurse = forgottenCurse.GetComponent<Button>();
 
         endturn.onClick.AddListener(TurnEnder);
         wizardmove.onClick.AddListener(MoveWizard);
         sacrificemove.onClick.AddListener(MoveSacrifice);
         staffwhack.onClick.AddListener(UseStaffWhack);
-        fiendishwisp.onClick.AddListener(UseFiendishWisp);
+        //fiendishwisp.onClick.AddListener(UseFiendishWisp);
+        forgottencurse.onClick.AddListener(UseForgottenCurse);
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
@@ -88,6 +91,14 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         if (!wizardHasAttacked)
         {
             wizard.GetComponent<FiendishWisp>().isTurn = true;
+        }
+    }
+
+    void UseForgottenCurse()
+    {
+        if (!wizardHasAttacked)
+        {
+            wizard.GetComponent<ForgottenCurse>().isTurn = true;
         }
     }
 }

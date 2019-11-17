@@ -12,6 +12,7 @@ public class enemyMoveScript : Move
     public turnSystemScript TurnSystem;
     public TurnClass turnClass;
     public bool isTurn = false;
+    public bool isCursed = false;
 
     // current movement stuff
     public Vector2 targetPosition;
@@ -59,6 +60,7 @@ public class enemyMoveScript : Move
         {
             // convert start position to vector3int for breadth first search
             var bfsStart = new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0);
+            //find where to move to
             moveTo = BFS2(bfsStart);
 
             // if your turn go to wait and move
@@ -68,13 +70,17 @@ public class enemyMoveScript : Move
 
     IEnumerator WaitAndMove()
     {
-        // wait for 1 second
+        // wait
         yield return new WaitForSeconds(0.5f);
 
-        // movement goes here
-        targetPosition.x = Mathf.Round(moveTo.x);
-        targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
-        transform.position = targetPosition;
+        // if cursed skip movement
+        if (!isCursed)
+        {
+            // movement goes here
+            targetPosition.x = Mathf.Round(moveTo.x);
+            targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
+            transform.position = targetPosition;
+        }
 
         yield return new WaitForSeconds(0.5f);
 
@@ -134,7 +140,7 @@ public class enemyMoveScript : Move
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
-
+        isCursed = false;
     }
 
     // looks up down left and right to check if it can attack
