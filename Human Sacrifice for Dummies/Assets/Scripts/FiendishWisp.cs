@@ -77,6 +77,7 @@ public class FiendishWisp : MonoBehaviour
                 if (worldPoint == mousePoint)
                 {
                     EndAttack();
+                    playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }
             }
         }
