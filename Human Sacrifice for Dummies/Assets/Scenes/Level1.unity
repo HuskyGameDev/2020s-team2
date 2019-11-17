@@ -985,6 +985,23 @@ MonoBehaviour:
   hasSearched: 0
   startPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
+--- !u!114 &924131784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924131777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716c0300000911a478c98e51a8eb6da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurnHandler: {fileID: 1241554508}
+  isTurn: 0
+  hasSearched: 0
+  startPosition: {x: 0, y: 0}
+  targetPosition: {x: 0, y: 0}
 --- !u!1 &930549756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1582,7 @@ MonoBehaviour:
   wizardMove: {fileID: 1048991060}
   sacrificeMove: {fileID: 1412315005}
   staffWhack: {fileID: 1340456524}
+  fiendishWisp: {fileID: 118621935}
   wizardHasMoved: 0
   sacrificeHasMoved: 0
   wizardHasAttacked: 0

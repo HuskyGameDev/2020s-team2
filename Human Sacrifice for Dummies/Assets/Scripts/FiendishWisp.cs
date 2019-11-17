@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class StaffWhack : MonoBehaviour
+public class FiendishWisp : MonoBehaviour
 {
     public GameObject playerTurnHandler;
 
@@ -29,7 +29,7 @@ public class StaffWhack : MonoBehaviour
             if (!hasSearched)
             {
                 var attackStart = new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0);
-                FindMeleeTargets(attackStart);
+                FindTargetsRange(attackStart);
 
                 // color start tile
                 if (tiles.TryGetValue(worldPoint, out _tile))
@@ -68,7 +68,7 @@ public class StaffWhack : MonoBehaviour
                     if (pos == mousePoint)
                     {
                         // damage target
-                        StaffWhackDoDamage(pos);
+                        FiendishWispDoDamage(pos);
                         EndAttack();
                     }
                 }
@@ -91,63 +91,100 @@ public class StaffWhack : MonoBehaviour
     }
 
     // looks up down left and right to check if there is a possible target
-    void FindMeleeTargets(Vector3Int currentPos)
+    void FindTargetsRange(Vector3Int currentPos)
     {
         // make list to be returned
         neighbors.Clear();
 
-        // get position where neightbors would be
-        Vector3Int up = new Vector3Int(currentPos.x, currentPos.y + 1, 0);
-        Vector3Int down = new Vector3Int(currentPos.x, currentPos.y - 1, 0);
-        Vector3Int left = new Vector3Int(currentPos.x - 1, currentPos.y, 0);
-        Vector3Int right = new Vector3Int(currentPos.x + 1, currentPos.y, 0);
-
         var tiles = GameTiles.instance.tiles;
 
-        // if neighbor exists check if space is occupied
-        // if not occupied add to neighbors list
-        if (tiles.TryGetValue(up, out _tile))
-        {
-            if (_tile.Occupied)
-            {
-                if (!_tile.Player)
-                {
-                    neighbors.Add(up);
-                }
-            }
+        // check directions
+        FindTargetsUp(currentPos);
+        FindTargetsLeft(currentPos);
+        FindTargetsDown(currentPos);
+        FindTargetsRight(currentPos);
+    }
 
-        }
+    void FindTargetsUp(Vector3Int currentPos)
+    {
+        var tiles = GameTiles.instance.tiles;
 
-        if (tiles.TryGetValue(left, out _tile))
+        for (int a = 0; a < 3; a++)
         {
-            if (_tile.Occupied)
+            Vector3Int up = new Vector3Int(currentPos.x, currentPos.y + 1 + a, 0);
+            if (tiles.TryGetValue(up, out _tile))
             {
-                if (!_tile.Player)
+                if (_tile.Occupied)
                 {
-                    neighbors.Add(left);
+                    if (!_tile.Player)
+                    {
+                        neighbors.Add(up);
+                    }
                 }
-            }
-        }
 
-        if (tiles.TryGetValue(down, out _tile))
-        {
-            if (_tile.Occupied)
-            {
-                if (!_tile.Player)
-                {
-                    neighbors.Add(down);
-                }
             }
         }
+    }
 
-        if (tiles.TryGetValue(right, out _tile))
+    void FindTargetsLeft(Vector3Int currentPos)
+    {
+        var tiles = GameTiles.instance.tiles;
+
+        for (int a = 0; a < 3; a++)
         {
-            if (_tile.Occupied)
+            Vector3Int left = new Vector3Int(currentPos.x - 1 - a, currentPos.y, 0);
+            if (tiles.TryGetValue(left, out _tile))
             {
-                if (!_tile.Player)
+                if (_tile.Occupied)
                 {
-                    neighbors.Add(right);
+                    if (!_tile.Player)
+                    {
+                        neighbors.Add(left);
+                    }
                 }
+
+            }
+        }
+    }
+
+    void FindTargetsDown(Vector3Int currentPos)
+    {
+        var tiles = GameTiles.instance.tiles;
+
+        for (int a = 0; a < 3; a++)
+        {
+            Vector3Int down = new Vector3Int(currentPos.x, currentPos.y - 1 - a, 0);
+            if (tiles.TryGetValue(down, out _tile))
+            {
+                if (_tile.Occupied)
+                {
+                    if (!_tile.Player)
+                    {
+                        neighbors.Add(down);
+                    }
+                }
+
+            }
+        }
+    }
+
+    void FindTargetsRight(Vector3Int currentPos)
+    {
+        var tiles = GameTiles.instance.tiles;
+
+        for (int a = 0; a < 3; a++)
+        {
+            Vector3Int right = new Vector3Int(currentPos.x + 1 + a, currentPos.y, 0);
+            if (tiles.TryGetValue(right, out _tile))
+            {
+                if (_tile.Occupied)
+                {
+                    if (!_tile.Player)
+                    {
+                        neighbors.Add(right);
+                    }
+                }
+
             }
         }
     }
@@ -183,7 +220,7 @@ public class StaffWhack : MonoBehaviour
         }
     }
 
-    void StaffWhackDoDamage(Vector3Int position)
+    void FiendishWispDoDamage(Vector3Int position)
     {
         Vector2 tPos;
         tPos.x = Mathf.Round(position.x);
@@ -199,7 +236,7 @@ public class StaffWhack : MonoBehaviour
             {
                 if (tPos.Equals(go.transform.position))
                 {
-                    go.GetComponent<Move>().health -= 2;
+                    go.GetComponent<Move>().health -= 1;
                 }
             }
         }

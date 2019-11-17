@@ -12,6 +12,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     public Button wizardMove;
     public Button sacrificeMove;
     public Button staffWhack;
+    public Button fiendishWisp;
 
     public bool wizardHasMoved = false;
     public bool sacrificeHasMoved = false;
@@ -29,11 +30,13 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         Button wizardmove = wizardMove.GetComponent<Button>();
         Button sacrificemove = sacrificeMove.GetComponent<Button>();
         Button staffwhack = staffWhack.GetComponent<Button>();
+        Button fiendishwisp = fiendishWisp.GetComponent<Button>();
 
         endturn.onClick.AddListener(TurnEnder);
         wizardmove.onClick.AddListener(MoveWizard);
         sacrificemove.onClick.AddListener(MoveSacrifice);
         staffwhack.onClick.AddListener(UseStaffWhack);
+        fiendishwisp.onClick.AddListener(UseFiendishWisp);
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
@@ -77,6 +80,14 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         if (!wizardHasAttacked)
         {
             wizard.GetComponent<StaffWhack>().isTurn = true;
+        }
+    }
+
+    void UseFiendishWisp()
+    {
+        if (!wizardHasAttacked)
+        {
+            wizard.GetComponent<FiendishWisp>().isTurn = true;
         }
     }
 }
