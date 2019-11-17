@@ -19,6 +19,8 @@ public class enemyMoveScript : Move
 
     public Vector3 moveTo;
 
+    public int damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,14 +69,18 @@ public class enemyMoveScript : Move
     IEnumerator WaitAndMove()
     {
         // wait for 1 second
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         // movement goes here
         targetPosition.x = Mathf.Round(moveTo.x);
         targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
         transform.position = targetPosition;
 
+        yield return new WaitForSeconds(0.5f);
+
         //attack goes here
+        var attackFrom = new Vector3Int(Mathf.RoundToInt(targetPosition.x), Mathf.FloorToInt(targetPosition.y), 0);
+        EnemyMelee(attackFrom);
 
         //end turn
         EndTurn();
@@ -111,9 +117,8 @@ public class enemyMoveScript : Move
     // go through all processes needed for ending turn
     void EndTurn()
     {
-        // update start position and occupied flags on the grid
+        // update start position and occupied flags on the grid before turn ends so that attack goes from current position
         PositionUpdate();
-
         // reset grid to normal colors
         var tiles = GameTiles.instance.tiles;
         foreach (KeyValuePair<Vector3, WorldTile> t1 in tiles)
@@ -130,5 +135,101 @@ public class enemyMoveScript : Move
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
 
+    }
+
+    // looks up down left and right to check if it can attack
+    void EnemyMelee(Vector3Int currentPos)
+    {
+        // get position where neightbors would be
+        Vector3Int up = new Vector3Int(currentPos.x, currentPos.y + 1, 0);
+        Vector3Int down = new Vector3Int(currentPos.x, currentPos.y - 1, 0);
+        Vector3Int left = new Vector3Int(currentPos.x - 1, currentPos.y, 0);
+        Vector3Int right = new Vector3Int(currentPos.x + 1, currentPos.y, 0);
+
+        var tiles = GameTiles.instance.tiles;
+
+        bool hasAttacked = false;
+        // if neighbor exists check if space is occupied
+        // if not occupied add to neighbors list
+        if (tiles.TryGetValue(up, out _tile))
+        {
+            if (_tile.Occupied)
+            {
+                if (_tile.Player)
+                {
+                    //attack up
+                    hasAttacked = true;
+                    EnemyDoDamage(up, damage);
+                }
+            }
+
+        }
+
+        if (hasAttacked)
+        { }
+        else if (tiles.TryGetValue(left, out _tile))
+        {
+            if (_tile.Occupied)
+            {
+                if (_tile.Player)
+                {
+                    //attack left
+                    hasAttacked = true;
+                    EnemyDoDamage(left, damage);
+                }
+            }
+        }
+
+        if (hasAttacked)
+        { }
+        else if (tiles.TryGetValue(down, out _tile))
+        {
+            if (_tile.Occupied)
+            {
+                if (_tile.Player)
+                {
+                    // attack down
+                    hasAttacked = true;
+                    EnemyDoDamage(down, damage);
+                }
+            }
+        }
+
+        if (hasAttacked)
+        { }
+        else if (tiles.TryGetValue(right, out _tile))
+        {
+            if (_tile.Occupied)
+            {
+                if (_tile.Player)
+                {
+                    // attack right
+                    hasAttacked = true;
+                    EnemyDoDamage(right, damage);
+                }
+            }
+        }
+    }
+
+    void EnemyDoDamage(Vector3Int position, int damage)
+    {
+        Vector2 tPos;
+        tPos.x = Mathf.Round(position.x);
+        tPos.y = Mathf.Floor(position.y) + 0.5f;
+
+        // damage target at position
+        var objects = GameObject.FindObjectsOfType<GameObject>();
+
+        foreach (GameObject go in objects)
+        {
+            //check if object is in player layer
+            if (go.layer == 10)
+            {
+                if (tPos.Equals(go.transform.position))
+                {
+                    go.GetComponent<Move>().health -= damage;
+                }
+            }
+        }
     }
 }

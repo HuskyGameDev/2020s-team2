@@ -14,6 +14,9 @@ public class Move : MonoBehaviour
     // this will record the / a shortest path from start to all positions on map
     public Dictionary<Vector3Int, Vector3Int> pathChart = new Dictionary<Vector3Int, Vector3Int>();
 
+    public int health;
+    public int moveRange;
+
     //used for player movement
     public void BFS(Vector3Int startPos)
     {
@@ -56,7 +59,7 @@ public class Move : MonoBehaviour
                     pathChart.Add(nextPos, currentPos);
 
                     // colors tiles that are within 3 blocks
-                    if (1 + distanceChart[currentPos] <= 3)
+                    if (1 + distanceChart[currentPos] <= moveRange)
                     {
                         if (tiles.TryGetValue(nextPos, out _tile))
                         {
@@ -149,7 +152,7 @@ public class Move : MonoBehaviour
                             if(_tile.Player)
                             { //this finds the spot that the enemy wants to move to and returns that
                                 Vector3Int tempPos = nextPos;
-                                while (distanceChart[pathChart[tempPos]] > 3)
+                                while (distanceChart[pathChart[tempPos]] > moveRange)
                                 {
                                     tempPos = pathChart[tempPos];
                                 }

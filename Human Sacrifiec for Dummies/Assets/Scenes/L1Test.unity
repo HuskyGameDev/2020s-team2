@@ -716,6 +716,8 @@ MonoBehaviour:
   - playerGameObject: {fileID: 710439956}
     isTurn: 0
     wasTurnPrev: 0
+  camera: {fileID: 0}
+  buttons: []
 --- !u!4 &261437839
 Transform:
   m_ObjectHideFlags: 0
@@ -1015,6 +1017,26 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2505214233416326869, guid: 6c132d94747659b4bafa250640184cae,
+        type: 3}
+      propertyPath: playerHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505214233416326869, guid: 6c132d94747659b4bafa250640184cae,
+        type: 3}
+      propertyPath: playerMove
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505214233416326869, guid: 6c132d94747659b4bafa250640184cae,
+        type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505214233416326869, guid: 6c132d94747659b4bafa250640184cae,
+        type: 3}
+      propertyPath: moveRange
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c132d94747659b4bafa250640184cae, type: 3}
 --- !u!1 &596754509 stripped
@@ -1239,6 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951e4d6928881894693b90cbd9643cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
+  moveRange: 1
   TurnSystem: {fileID: 0}
   turnClass:
     playerGameObject: {fileID: 0}
@@ -1667,6 +1691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951e4d6928881894693b90cbd9643cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
+  moveRange: 3
   TurnSystem: {fileID: 0}
   turnClass:
     playerGameObject: {fileID: 0}
@@ -2245,6 +2271,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2795715653739257161, guid: 0c4bc1c781f6e534d823483995e6fb5a,
+        type: 3}
+      propertyPath: playerHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795715653739257161, guid: 0c4bc1c781f6e534d823483995e6fb5a,
+        type: 3}
+      propertyPath: playerMove
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795715653739257161, guid: 0c4bc1c781f6e534d823483995e6fb5a,
+        type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795715653739257161, guid: 0c4bc1c781f6e534d823483995e6fb5a,
+        type: 3}
+      propertyPath: moveRange
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c4bc1c781f6e534d823483995e6fb5a, type: 3}
 --- !u!1 &1312060673 stripped
@@ -2362,6 +2408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951e4d6928881894693b90cbd9643cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
+  moveRange: 3
   TurnSystem: {fileID: 0}
   turnClass:
     playerGameObject: {fileID: 0}
@@ -2587,6 +2635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f16ae16ce19d54b9dff6adbe67a887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  moveRange: 0
 --- !u!4 &1829895927
 Transform:
   m_ObjectHideFlags: 0
