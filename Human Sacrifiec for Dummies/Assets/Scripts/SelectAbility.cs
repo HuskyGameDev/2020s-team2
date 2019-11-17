@@ -10,7 +10,7 @@ public class SelectAbility : MonoBehaviour
     string[] abilities = {"Staff Whack", "Fiendish Wisp", "Vicious Slap", 
         "Forgotten Curse", "Infernal Bubble", "Shady Switcheroo", "Shadow Step" }; 
     //This string store all of the names of the abilities the user has chosen.
-    string[] chosen = new string[3];
+    public string[] chosen = new string[3];
     //Initialize all of the buttons in the scene.
     public Button Ability1;
     public Button Ability2;
