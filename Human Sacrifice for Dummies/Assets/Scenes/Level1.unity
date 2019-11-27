@@ -1529,7 +1529,9 @@ MonoBehaviour:
   wizardMove: {fileID: 1048991060}
   sacrificeMove: {fileID: 1412315005}
   staffWhack: {fileID: 1340456524}
-  fiendishWisp: {fileID: 118621935}
+  fiendishWisp: {fileID: 0}
+  forgottenCurse: {fileID: 118621935}
+  infernalBubble: {fileID: 833057195}
   wizardHasMoved: 0
   sacrificeHasMoved: 0
   wizardHasAttacked: 0
@@ -2613,6 +2615,41 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6798258274147617188}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8863650431141835659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863650431141835658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a626257d5874846ab8a73b66dc6c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurnHandler: {fileID: 1241554508}
+  isTurn: 0
+  hasSearched: 0
+  startPosition: {x: 0, y: 0}
+  targetPosition: {x: 0, y: 0}
+  tempPosition: {x: 0, y: 0}
+--- !u!114 &8863650431141835666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863650431141835658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7e37529798d3345acf0738b2285119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurnHandler: {fileID: 1241554508}
+  isTurn: 0
+  hasSearched: 0
+  startPosition: {x: 0, y: 0}
+  targetPosition: {x: 0, y: 0}
 --- !u!1 &8863650431738870348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9154178233109911723, guid: 6c132d94747659b4bafa250640184cae,

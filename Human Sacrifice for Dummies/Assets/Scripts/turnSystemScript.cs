@@ -49,6 +49,10 @@ public class turnSystemScript : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
+
+        // clear infernal bubble
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().bubble = false;
+        GameObject.FindGameObjectWithTag("Sacrifice").GetComponent<PlayerMovement>().bubble = false;
     }
 
     //allows the next entity in the turn order to go
@@ -56,6 +60,13 @@ public class turnSystemScript : MonoBehaviour
     {
         for(int i = 0;i<playersGroup.Count;i++)
         {
+            if (playersGroup[i].playerGameObject == null)
+            {
+                // game object was destroyed
+                print("object has 0 hp");
+                playersGroup[i].wasTurnPrev = true;
+            }
+
             if (!playersGroup[i].wasTurnPrev)
             {
                 playersGroup[i].isTurn = true;

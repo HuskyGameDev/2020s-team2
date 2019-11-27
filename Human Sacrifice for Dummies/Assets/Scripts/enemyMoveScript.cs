@@ -52,6 +52,18 @@ public class enemyMoveScript : Move
     // Update is called once per frame
     void Update()
     {
+        // if enemy drops to 0 hp or below destroy enemy
+        if (health <= 0)
+        {
+            // any effects that happen on enemy death goes here.
+            var tiles = GameTiles.instance.tiles;
+            if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
+            {
+                _tile.Occupied = false;
+            }
+            Destroy(gameObject);
+        }
+
         //turn system stuff
         isTurn = turnClass.isTurn;
 
@@ -233,7 +245,14 @@ public class enemyMoveScript : Move
             {
                 if (tPos.Equals(go.transform.position))
                 {
-                    go.GetComponent<Move>().health -= damage;
+                    if (go.GetComponent<PlayerMovement>().bubble)
+                    {
+                        go.GetComponent<PlayerMovement>().bubble = false;
+                    }
+                    else
+                    {
+                        go.GetComponent<Move>().health -= damage;
+                    }
                 }
             }
         }

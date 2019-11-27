@@ -14,6 +14,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     public Button staffWhack;
     public Button fiendishWisp;
     public Button forgottenCurse;
+    public Button infernalBubble;
 
     public bool wizardHasMoved = false;
     public bool sacrificeHasMoved = false;
@@ -33,6 +34,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         Button staffwhack = staffWhack.GetComponent<Button>();
         //Button fiendishwisp = fiendishWisp.GetComponent<Button>();
         Button forgottencurse = forgottenCurse.GetComponent<Button>();
+        //Button infernalbubble = infernalBubble.GetComponent<Button>();
 
         endturn.onClick.AddListener(TurnEnder);
         wizardmove.onClick.AddListener(MoveWizard);
@@ -40,6 +42,8 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         staffwhack.onClick.AddListener(UseStaffWhack);
         //fiendishwisp.onClick.AddListener(UseFiendishWisp);
         forgottencurse.onClick.AddListener(UseForgottenCurse);
+        //infernalbubble.onClick.AddListener(UseInfernalBubble);
+
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
@@ -73,6 +77,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     {
         wizardHasMoved = false;
         sacrificeHasMoved = false;
+        wizardHasAttacked = false;
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
@@ -99,6 +104,14 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         if (!wizardHasAttacked)
         {
             wizard.GetComponent<ForgottenCurse>().isTurn = true;
+        }
+    }
+
+    void UseInfernalBubble()
+    {
+        if (!wizardHasAttacked)
+        {
+            wizard.GetComponent<InfernalBubble>().isTurn = true;
         }
     }
 }

@@ -17,6 +17,7 @@ public class PlayerMovement : Move
 
     // turn system stuff
     public bool isTurn = false;
+    public bool bubble = false;
 
     private void Start()
     {
