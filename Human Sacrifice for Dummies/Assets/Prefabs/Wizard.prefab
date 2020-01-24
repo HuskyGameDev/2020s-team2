@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 6798258275220289229}
   - component: {fileID: 8688608557508525136}
   - component: {fileID: 6798258275247931611}
+  - component: {fileID: 8381120486095106222}
   - component: {fileID: 6798258275247931601}
+  - component: {fileID: 6446763875033370850}
   m_Layer: 10
   m_Name: Wizard
   m_TagString: Player
@@ -151,6 +153,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
   isTurn: 0
+  bubble: 0
 --- !u!114 &6798258275247931611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +171,24 @@ MonoBehaviour:
   hasSearched: 0
   startPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
+--- !u!114 &8381120486095106222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691535172756552238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bb43a82bbb35a45b0641fe6875200a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurnHandler: {fileID: 0}
+  isTurn: 0
+  hasSearched: 0
+  startPosition: {x: 0, y: 0}
+  targetPosition: {x: 0, y: 0}
+  tempPosition: {x: 0, y: 0}
 --- !u!114 &6798258275247931601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +206,21 @@ MonoBehaviour:
   hasSearched: 0
   startPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
+--- !u!114 &6446763875033370850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691535172756552238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a8a4be0a3e68b94e8a6690dd7e535c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurnHandler: {fileID: 0}
+  isTurn: 0
+  hasSearched: 0
+  startPosition: {x: 0, y: 0}
+  targetPosition: {x: 0, y: 0}
+  tempPosition: {x: 0, y: 0}
