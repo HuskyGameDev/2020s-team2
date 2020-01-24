@@ -31,23 +31,43 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     void Start()
     {
         Button endturn = endTurn.GetComponent<Button>();
-        Button wizardmove = wizardMove.GetComponent<Button>();
-        Button sacrificemove = sacrificeMove.GetComponent<Button>();
-        Button staffwhack = staffWhack.GetComponent<Button>();
-        Button shadySwitcheroo = shadyswitcheroo.GetComponent<Button>();
-        //Button fiendishwisp = fiendishWisp.GetComponent<Button>();
-        //Button forgottencurse = forgottenCurse.GetComponent<Button>();
-        //Button infernalbubble = infernalBubble.GetComponent<Button>();
-
-
         endturn.onClick.AddListener(TurnEnder);
+
+        Button wizardmove = wizardMove.GetComponent<Button>();
         wizardmove.onClick.AddListener(MoveWizard);
+
+        Button sacrificemove = sacrificeMove.GetComponent<Button>();
         sacrificemove.onClick.AddListener(MoveSacrifice);
-        staffwhack.onClick.AddListener(UseStaffWhack);
-        shadySwitcheroo.onClick.AddListener(UseShadySwitcheroo);
-        //fiendishwisp.onClick.AddListener(UseFiendishWisp);
-        //forgottencurse.onClick.AddListener(UseForgottenCurse);
-        //infernalbubble.onClick.AddListener(UseInfernalBubble);
+
+        if (staffWhack != null)
+        {
+            Button staffwhack = staffWhack.GetComponent<Button>();
+            staffwhack.onClick.AddListener(UseStaffWhack);
+        }
+
+        if (shadyswitcheroo != null)
+        {
+            Button shadySwitcheroo = shadyswitcheroo.GetComponent<Button>();
+            shadySwitcheroo.onClick.AddListener(UseShadySwitcheroo);
+        }
+
+        if (fiendishWisp != null)
+        {
+            Button fiendishwisp = fiendishWisp.GetComponent<Button>();
+            fiendishwisp.onClick.AddListener(UseFiendishWisp);
+        }
+
+        if (forgottenCurse != null)
+        {
+            Button forgottencurse = forgottenCurse.GetComponent<Button>();
+            forgottencurse.onClick.AddListener(UseForgottenCurse);
+        }
+
+        if (infernalBubble != null)
+        {
+            Button infernalbubble = infernalBubble.GetComponent<Button>();
+            infernalbubble.onClick.AddListener(UseInfernalBubble);
+        }
 
 
         // load turn system
