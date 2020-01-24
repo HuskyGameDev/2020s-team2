@@ -58,7 +58,7 @@ public class turnSystemScript : MonoBehaviour
     //allows the next entity in the turn order to go
     void UpdateTurns()
     {
-        for(int i = 0; i < playersGroup.Count; i++)
+        for(int i = 0;i<playersGroup.Count;i++)
         {
             if (playersGroup[i].playerGameObject == null)
             {
@@ -86,4 +86,6 @@ public class TurnClass
     public GameObject playerGameObject;
     public bool isTurn = false;
     public bool wasTurnPrev = false;
+
+
 }

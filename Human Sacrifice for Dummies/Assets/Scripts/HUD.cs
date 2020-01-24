@@ -91,11 +91,10 @@ public class HUD : MonoBehaviour
     {
         for(int i = 0; i < buttons.Count; i++)
         {
-                buttons[i].GetComponent<Button>().interactable = false;
+                //buttons[i].GetComponent<Button>().interactable = false;
         }
         
         //Replace with wait until <Abilityscript finishes>
-
         yield return new WaitForSeconds(1f);
 
         
@@ -109,8 +108,6 @@ public class HUD : MonoBehaviour
         }
         abilityUsed = true;
         buttons[5].GetComponent<Button>().interactable = true;
-
-
 
     }
 

@@ -306,7 +306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fiendish Wisp
+  m_Text: Ability Two
 --- !u!222 &206078390
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Infernal Bubble
+  m_Text: Ability Three
 --- !u!222 &709417523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1333,7 +1333,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10/10 HP
+  m_Text: x/x HP
 --- !u!222 &1081893927
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1410,7 +1410,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Staff Whack
+  m_Text: Ability One
 --- !u!222 &1172193010
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2207,13 +2207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'SAM
-
-    THE
-
-    DESTROYER
-
-'
+  m_Text: "%s\nThe \nDESTROYER\n"
 --- !u!222 &1830982863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2290,7 +2284,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TURN 8
+  m_Text: 'TURN #'
 --- !u!222 &1856234383
 CanvasRenderer:
   m_ObjectHideFlags: 0
