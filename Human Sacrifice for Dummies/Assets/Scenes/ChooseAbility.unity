@@ -578,7 +578,6 @@ MonoBehaviour:
   Chosen1: {fileID: 979866593}
   Chosen2: {fileID: 1463378124}
   Chosen3: {fileID: 266283370}
-  buttons: []
 --- !u!114 &754352793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4014897703225100765, guid: 9b35ef3b3e8f79c40ae186598d676aff,

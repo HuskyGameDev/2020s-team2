@@ -1705,7 +1705,7 @@ RectTransform:
   m_Children:
   - {fileID: 472538619}
   m_Father: {fileID: 1745991350}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1804,7 +1804,7 @@ GameObject:
   - component: {fileID: 1412315006}
   - component: {fileID: 1412315005}
   m_Layer: 5
-  m_Name: Move (1)
+  m_Name: MoveSacrifice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1823,7 +1823,7 @@ RectTransform:
   m_Children:
   - {fileID: 821101609}
   m_Father: {fileID: 1745991350}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2020,8 +2020,8 @@ RectTransform:
   - {fileID: 118621934}
   - {fileID: 833057194}
   - {fileID: 1048991059}
-  - {fileID: 1341337474}
   - {fileID: 1412315004}
+  - {fileID: 1341337474}
   m_Father: {fileID: 930549757}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
