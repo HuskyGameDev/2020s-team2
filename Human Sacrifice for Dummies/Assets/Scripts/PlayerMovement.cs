@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : Move
 {
@@ -36,6 +37,20 @@ public class PlayerMovement : Move
 
     void Update()
     {
+
+        // if player drops to 0 hp or below destroy player
+        if (health <= 0)
+        {
+            // any effects that happen on player death goes here.
+            var tiles = GameTiles.instance.tiles;
+            if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
+            {
+                _tile.Occupied = false;
+            }
+            Destroy(gameObject);
+            SceneManager.LoadScene("MainMenu");
+        }
+
         // check if it is your turn
         if (isTurn)
         {
