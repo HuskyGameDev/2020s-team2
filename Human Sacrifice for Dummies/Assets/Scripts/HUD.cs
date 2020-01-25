@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class HUD : MonoBehaviour
 {
     public Text PlayerName;
@@ -17,10 +19,9 @@ public class HUD : MonoBehaviour
     public Text Turn;
 
     public List<Button> buttons;
+    
+    bool[] buttonUsed = {false,false,false,false,false, false};
 
-    bool playerHasMoved = false;
-    bool sacHasMoved = false;
-    bool abilityUsed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class HUD : MonoBehaviour
         for (int i = 0; i < btns.Length; i++)
         {
             buttons.Add(btns[i]);
+            buttonUsed[i] = false;
         }
 
         Button ability1 = Ability1.GetComponent<Button>();
@@ -52,32 +54,39 @@ public class HUD : MonoBehaviour
 
     void MovePlayerOnClick()
     {
-        StartCoroutine(waitMove(0));
-        Move.GetComponent<Button>().interactable = false;
+        StartCoroutine(waitMove(0));       
     }
 
     void MoveSacOnClick()
     {
         StartCoroutine(waitMove(1));
-        MoveSac.GetComponent<Button>().interactable = false;
     }
 
     void AbilityOneClick()
     {
         StartCoroutine(waitAction());
         Ability1.GetComponent<Button>().interactable = false;
+        buttonUsed[0] = true;
+        buttonUsed[1] = true;
+        buttonUsed[2] = true;
     }
 
     void AbilityTwoClick()
     {
         StartCoroutine(waitAction());
         Ability2.GetComponent<Button>().interactable = false;
+        buttonUsed[0] = true;
+        buttonUsed[1] = true;
+        buttonUsed[2] = true;
     }
 
     void AbilityThreeClick()
     {
         StartCoroutine(waitAction());
         Ability3.GetComponent<Button>().interactable = false;
+        buttonUsed[0] = true;
+        buttonUsed[1] = true;
+        buttonUsed[2] = true;
     }
 
     void EndOnClick()
@@ -91,23 +100,21 @@ public class HUD : MonoBehaviour
     {
         for(int i = 0; i < buttons.Count; i++)
         {
-                //buttons[i].GetComponent<Button>().interactable = false;
+                buttons[i].GetComponent<Button>().interactable = false;
         }
         
         //Replace with wait until <Abilityscript finishes>
         yield return new WaitForSeconds(1f);
 
-        
-        if(!sacHasMoved)
+
+        for (int i = 0; i < buttons.Count; i++)
         {
-            buttons[5].GetComponent<Button>().interactable = true;
+            if (!buttonUsed[i])
+            {
+                buttons[i].GetComponent<Button>().interactable = true;
+            }
         }
-        if (!playerHasMoved)
-        {
-            buttons[4].GetComponent<Button>().interactable = true;
-        }
-        abilityUsed = true;
-        buttons[5].GetComponent<Button>().interactable = true;
+
 
     }
 
@@ -116,7 +123,16 @@ public class HUD : MonoBehaviour
     {
         for (int i = 0; i < buttons.Count; i++)
         {
-            //buttons[i].GetComponent<Button>().interactable = false;
+            buttons[i].GetComponent<Button>().interactable = false;
+        }
+
+        if(which == 0)
+        {
+            buttonUsed[3] = true;
+        }
+        else if(which == 1)
+        {
+            buttonUsed[4] = true;
         }
 
 
@@ -124,29 +140,16 @@ public class HUD : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
 
-        if (!abilityUsed)
+        
+
+        for (int i = 0; i < buttons.Count; i++)
         {
-            for (int i = 0; i <= 2; i++)
+            if (!buttonUsed[i])
             {
                 buttons[i].GetComponent<Button>().interactable = true;
             }
         }
-
-        if (which == 0 && !sacHasMoved) 
-        { 
-            buttons[3].GetComponent<Button>().interactable = true;
-            playerHasMoved = true;
-        }
-        if(which == 1 && !playerHasMoved)
-        {
-            buttons[2].GetComponent<Button>().interactable = true;
-            sacHasMoved = true;
-        }
-
-        buttons[4].GetComponent<Button>().interactable = true;
+       
     }
-
-   
-
 
 }

@@ -10,7 +10,7 @@ public class SelectAbility : MonoBehaviour
     string[] abilities = {"Staff Whack", "Fiendish Wisp", "Vicious Slap", 
         "Forgotten Curse", "Infernal Bubble", "Shady Switcheroo", "Shadow Step" }; 
     //This string store all of the names of the abilities the user has chosen.
-    public string[] chosen = new string[3];
+    string[] chosen = new string[3];
     //Initialize all of the buttons in the scene.
     public Button Ability1;
     public Button Ability2;
@@ -26,10 +26,11 @@ public class SelectAbility : MonoBehaviour
     public Text Chosen3;
 
     //Initialize a list for button objects needed to reset them when reset button is pressed.
-    public List<Button> buttons;
+    List<Button> buttons;
 
     private void Start()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMusic();
         //populate button list with the buttons
         Button[] btns = this.GetComponentsInChildren<Button>(true);
         for(int i = 0; i < btns.Length; i++)
@@ -61,6 +62,8 @@ public class SelectAbility : MonoBehaviour
         ability7.onClick.AddListener(AddSevenToBar);
         reset.onClick.AddListener(resetButton);
         confirm.onClick.AddListener(confirmButton);
+
+        
     }
 
     //Check if the chosen ability array is filled at the given index

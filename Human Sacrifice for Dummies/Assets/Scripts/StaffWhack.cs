@@ -68,6 +68,7 @@ public class StaffWhack : MonoBehaviour
                     if (pos == mousePoint)
                     {
                         // damage target
+                        FindObjectOfType<AudioManager>().PlaySound("Staff Whack");
                         StaffWhackDoDamage(pos);
                         EndAttack();
                     }
@@ -76,6 +77,7 @@ public class StaffWhack : MonoBehaviour
                 // if you click yourself, skip attack
                 if (worldPoint == mousePoint)
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("Staff Whack");
                     EndAttack();
                     playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }

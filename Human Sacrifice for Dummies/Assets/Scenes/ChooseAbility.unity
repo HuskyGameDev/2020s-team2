@@ -566,6 +566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ceca8fdcfdde2d49800e1703eeb0a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chosen:
+  - 
+  - 
+  - 
   Ability1: {fileID: 1633575552}
   Ability2: {fileID: 754352793}
   Ability3: {fileID: 1605921190}
@@ -578,7 +582,6 @@ MonoBehaviour:
   Chosen1: {fileID: 979866593}
   Chosen2: {fileID: 1463378124}
   Chosen3: {fileID: 266283370}
-  buttons: []
 --- !u!114 &754352793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4014897703225100765, guid: 9b35ef3b3e8f79c40ae186598d676aff,

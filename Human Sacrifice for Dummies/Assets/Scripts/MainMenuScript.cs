@@ -9,10 +9,9 @@ public class MainMenuScript : MonoBehaviour
     public Button Play; 
     public Button Options;
     public Button Exit;
-   
+    
     void Start()
     {
-
         //get all of the buttons from the scene and add the appropriate listener
         Button play = Play.GetComponent<Button>();
         Button options = Options.GetComponent<Button>();
@@ -25,18 +24,20 @@ public class MainMenuScript : MonoBehaviour
     void PlayOnClick()
     {
         //start game scene
+        FindObjectOfType<AudioManager>().PlaySound("Menu Button Forwards");
         SceneManager.LoadScene("ChooseAbility");
     }
 
     void OptionsOnClick()
     {
-        //start options screen
+        FindObjectOfType<AudioManager>().PlaySound("Menu Button Forwards");
         SceneManager.LoadScene("Options");
     }
 
     void ExitOnClick()
     {
         //quit the game
+        FindObjectOfType<AudioManager>().PlaySound("Menu Button Backwards");
         Application.Quit();
     }
 }

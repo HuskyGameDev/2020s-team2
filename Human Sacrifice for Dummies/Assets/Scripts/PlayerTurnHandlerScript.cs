@@ -17,6 +17,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     public Button forgottenCurse;
     public Button infernalBubble;
     public Button shadyswitcheroo;
+    public Button shadowstep;
 
     public bool wizardHasMoved = false;
     public bool sacrificeHasMoved = false;
@@ -30,6 +31,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().StopMusic();
         Button endturn = endTurn.GetComponent<Button>();
         endturn.onClick.AddListener(TurnEnder);
 
@@ -69,6 +71,12 @@ public class PlayerTurnHandlerScript : MonoBehaviour
             infernalbubble.onClick.AddListener(UseInfernalBubble);
         }
 
+        if (shadowstep != null)
+        {
+            Button shadowStep = shadowstep.GetComponent<Button>();
+            shadowStep.onClick.AddListener(useshadowStep);
+        }
+
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
@@ -79,6 +87,14 @@ public class PlayerTurnHandlerScript : MonoBehaviour
             {
                 turnClass = tc;
             }
+        }
+    }
+
+    private void useshadowStep()
+    {
+        if (!wizardHasAttacked)
+        {
+            wizard.GetComponent<ShadowStep>().isTurn = true;
         }
     }
 

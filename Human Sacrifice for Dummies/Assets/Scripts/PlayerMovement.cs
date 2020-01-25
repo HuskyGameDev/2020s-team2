@@ -112,6 +112,7 @@ public class PlayerMovement : Move
             _tile.Occupied = false;
             _tile.Player = false;
         }
+        FindObjectOfType<AudioManager>().PlaySound("Walking");
         ChangeStartPosition();
         if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
         {
@@ -123,6 +124,9 @@ public class PlayerMovement : Move
     // go through all processes needed for ending turn
     void EndTurn()
     {
+        //Resets move range
+        gameObject.GetComponent<PlayerMovement>().moveRange = 3;
+
         // update start position and occupied flags on the grid
         PositionUpdate();
 
