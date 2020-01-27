@@ -30,7 +30,6 @@ public class SelectAbility : MonoBehaviour
 
     private void Start()
     {
-        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMusic();
         //populate button list with the buttons
         Button[] btns = this.GetComponentsInChildren<Button>(true);
         for(int i = 0; i < btns.Length; i++)

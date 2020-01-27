@@ -31,7 +31,6 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().StopMusic();
         Button endturn = endTurn.GetComponent<Button>();
         endturn.onClick.AddListener(TurnEnder);
 

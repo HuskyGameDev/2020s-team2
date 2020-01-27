@@ -1681,6 +1681,8 @@ MonoBehaviour:
   fiendishWisp: {fileID: 0}
   forgottenCurse: {fileID: 118621935}
   infernalBubble: {fileID: 833057195}
+  shadyswitcheroo: {fileID: 0}
+  shadowstep: {fileID: 0}
   wizardHasMoved: 0
   sacrificeHasMoved: 0
   wizardHasAttacked: 0
