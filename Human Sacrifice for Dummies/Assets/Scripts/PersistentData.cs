@@ -7,6 +7,6 @@ using UnityEngine;
 public class PersistentData : MonoBehaviour
 {
     public static string playerName;
-    public string[] abilities;
+    public static string[] abilities = new string[3];
 }
 

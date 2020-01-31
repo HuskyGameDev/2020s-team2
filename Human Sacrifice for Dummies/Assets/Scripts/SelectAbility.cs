@@ -24,15 +24,16 @@ public class SelectAbility : MonoBehaviour
     public Text Chosen1;
     public Text Chosen2;
     public Text Chosen3;
+    //public PersistentData persistentData;
 
     //Initialize a list for button objects needed to reset them when reset button is pressed.
-    List<Button> buttons;
+    List<Button> buttons = new List<Button>();
 
     private void Start()
     {
         //populate button list with the buttons
         Button[] btns = this.GetComponentsInChildren<Button>(true);
-        for(int i = 0; i < btns.Length; i++)
+        for (int i = 0; i < btns.Length; i++)
         {
             buttons.Add(btns[i]);
         }
@@ -88,15 +89,13 @@ public class SelectAbility : MonoBehaviour
 
     //confirm choices and advance to the next scene
     void confirmButton()
-    {
-        if (chosen[2] == null)
+    {        
+        for (int i = 0; i < PersistentData.abilities.Length; i++)
         {
-
+            PersistentData.abilities[i] = chosen[i];
+            //Debug.Log(PersistentData.abilities[i]);
         }
-        else
-        {
-            SceneManager.LoadScene("Level1");
-        }
+        SceneManager.LoadScene("Level1");
     }
 
     //Add the first ability to whichever slot is available in the chosen array
@@ -114,9 +113,7 @@ public class SelectAbility : MonoBehaviour
         }
         updateChosenList();
         Ability1.GetComponent<Button>().interactable = false;
-        Debug.Log(chosen[0]);
-        Debug.Log(chosen[1]);
-        Debug.Log(chosen[2]);
+       
 
 
     }
@@ -138,9 +135,7 @@ public class SelectAbility : MonoBehaviour
         }
         updateChosenList();
         Ability2.GetComponent<Button>().interactable = false;
-        Debug.Log(chosen[0]);
-        Debug.Log(chosen[1]);
-        Debug.Log(chosen[2]);
+        
 
     }
 
@@ -161,9 +156,7 @@ public class SelectAbility : MonoBehaviour
         }
         updateChosenList();
         Ability3.GetComponent<Button>().interactable = false;
-        Debug.Log(chosen[0]);
-        Debug.Log(chosen[1]);
-        Debug.Log(chosen[2]);
+      
     }
 
     //Add the fourth ability to whichever slot is available in the chosen array
@@ -183,9 +176,7 @@ public class SelectAbility : MonoBehaviour
         }
         updateChosenList();
         Ability4.GetComponent<Button>().interactable = false;
-        Debug.Log(chosen[0]);
-        Debug.Log(chosen[1]);
-        Debug.Log(chosen[2]);
+    
     }
 
     //Add the fifth ability to whichever slot is available in the chosen array
@@ -205,9 +196,7 @@ public class SelectAbility : MonoBehaviour
         }
         updateChosenList();
         Ability5.GetComponent<Button>().interactable = false;
-        Debug.Log(chosen[0]);
-        Debug.Log(chosen[1]);
-        Debug.Log(chosen[2]);
+  
     }
 
     //Add the sixth ability to whichever slot is available in the chosen array
@@ -227,9 +216,7 @@ public class SelectAbility : MonoBehaviour
         }
         updateChosenList();
         Ability6.GetComponent<Button>().interactable = false;
-        Debug.Log(chosen[0]);
-        Debug.Log(chosen[1]);
-        Debug.Log(chosen[2]);
+        
     }
 
     //Add the seventh ability to whichever slot is available in the chosen array
@@ -249,9 +236,7 @@ public class SelectAbility : MonoBehaviour
         }
         updateChosenList();
         Ability7.GetComponent<Button>().interactable = false;
-        Debug.Log(chosen[0]);
-        Debug.Log(chosen[1]);
-        Debug.Log(chosen[2]);
+       
     }
 
     //adds the chosen ability to the list

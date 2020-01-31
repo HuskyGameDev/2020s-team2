@@ -481,6 +481,7 @@ GameObject:
   - component: {fileID: 590154627}
   - component: {fileID: 590154626}
   - component: {fileID: 590154629}
+  - component: {fileID: 590154630}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -566,10 +567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ceca8fdcfdde2d49800e1703eeb0a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosen:
-  - 
-  - 
-  - 
   Ability1: {fileID: 1633575552}
   Ability2: {fileID: 754352793}
   Ability3: {fileID: 1605921190}
@@ -582,6 +579,20 @@ MonoBehaviour:
   Chosen1: {fileID: 979866593}
   Chosen2: {fileID: 1463378124}
   Chosen3: {fileID: 266283370}
+  persistentData: {fileID: 590154630}
+--- !u!114 &590154630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590154625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e403b10f06b6dce429b30316f2be3d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities: []
 --- !u!114 &754352793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4014897703225100765, guid: 9b35ef3b3e8f79c40ae186598d676aff,
@@ -1046,7 +1057,7 @@ GameObject:
   - component: {fileID: 1353150314}
   - component: {fileID: 1353150313}
   m_Layer: 5
-  m_Name: Confrim
+  m_Name: Confirm
   m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2136,7 +2147,7 @@ PrefabInstance:
     - target: {fileID: 4014897703225100764, guid: 9b35ef3b3e8f79c40ae186598d676aff,
         type: 3}
       propertyPath: m_RaycastTarget
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b35ef3b3e8f79c40ae186598d676aff, type: 3}
