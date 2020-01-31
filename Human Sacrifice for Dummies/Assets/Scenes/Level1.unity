@@ -837,6 +837,50 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: ebbff99c16b0bd8409338f1cfe54c662, type: 3}
     volume: 1
     source: {fileID: 0}
+  - name: Fiendish Wisp
+    audioClip: {fileID: 8300000, guid: c4d30442bf11abb4583044871ed4a7a1, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Shadow Step
+    audioClip: {fileID: 8300000, guid: 8cab7d7cb9b057d43b20636710e0f07e, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Forgotten Curse
+    audioClip: {fileID: 8300000, guid: ff8d4ac7b2babbc4a9b44749149bb9fb, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Shady Switcheroo
+    audioClip: {fileID: 8300000, guid: 42c8de3fed5f97e40b2933616f3e5875, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Infernal Bubble (Form)
+    audioClip: {fileID: 8300000, guid: 32fd108c40caedc45a70da4d0a2c4dd2, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Infernal Bubble (Pop)
+    audioClip: {fileID: 8300000, guid: 1267e65f2f81cbf4893cbe1574ca1d94, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Vicious Slap
+    audioClip: {fileID: 8300000, guid: 75da1e363b572644eb2014f6f236fd19, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Vicious Slap (Oof)
+    audioClip: {fileID: 8300000, guid: ab4961bfc742f154da738f05d787af63, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Enemy Death
+    audioClip: {fileID: 8300000, guid: f431052c7457cf8488299b957de72697, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Enemy Turn
+    audioClip: {fileID: 8300000, guid: 8ed9161efc1b3c543bc37862d8364633, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Player Turn
+    audioClip: {fileID: 8300000, guid: 377f4446aed9ee34d8eeafa1aa204b3d, type: 3}
+    volume: 1
+    source: {fileID: 0}
 --- !u!4 &908509000
 Transform:
   m_ObjectHideFlags: 0

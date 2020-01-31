@@ -61,6 +61,7 @@ public class ShadySwitcheroo : MonoBehaviour
                     GameObject sac = GameObject.FindGameObjectWithTag("Sacrifice");
                     sac.transform.position = startPosition;
                     gameObject.transform.position = targetPosition;
+                    FindObjectOfType<AudioManager>().PlaySound("Shady Switcheroo"); // Play Shady Switcheroo Sound
                     EndAttack();
                 }
             }

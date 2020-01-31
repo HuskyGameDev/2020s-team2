@@ -86,7 +86,6 @@ public class PlayerMovement : Move
                     {
 
                         transform.position = targetPosition;
-
                         EndTurn();
                     }
                 }
@@ -140,11 +139,9 @@ public class PlayerMovement : Move
                 _tile.TilemapMember.SetColor(_tile.LocalPlace, Color.white);
             }
         }
-
         // BFS will be called again next turn
         hasSearched = false;
         isTurn = false;
-
         if (gameObject.CompareTag("Player"))
         {
             playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasMoved = true;

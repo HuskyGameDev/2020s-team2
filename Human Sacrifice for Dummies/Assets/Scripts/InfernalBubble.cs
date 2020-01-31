@@ -58,6 +58,7 @@ public class InfernalBubble : MonoBehaviour
                 // if you click yourself, wizard bubble = true
                 if (worldPoint1 == mousePoint)
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("Infernal Bubble (Form)"); // Play Infernal Bubble Form Sound
                     gameObject.GetComponent<PlayerMovement>().bubble = true;
                     EndAttack();
                 }
@@ -65,6 +66,7 @@ public class InfernalBubble : MonoBehaviour
                 // if you click sac, sac bubble = true
                 if (worldPoint2 == mousePoint)
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("Infernal Bubble (Form)"); // Play Infernal Bubble Form Sound
                     GameObject sac = GameObject.FindGameObjectWithTag("Sacrifice");
                     sac.GetComponent<PlayerMovement>().bubble = true;
                     EndAttack();

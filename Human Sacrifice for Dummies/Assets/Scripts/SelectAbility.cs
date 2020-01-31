@@ -62,7 +62,6 @@ public class SelectAbility : MonoBehaviour
         reset.onClick.AddListener(resetButton);
         confirm.onClick.AddListener(confirmButton);
 
-        
     }
 
     //Check if the chosen ability array is filled at the given index
