@@ -26,7 +26,6 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //populate button list with the buttons
         Button[] btns = this.GetComponentsInChildren<Button>(true);
         for (int i = 0; i < btns.Length; i++)
         {
@@ -150,6 +149,16 @@ public class HUD : MonoBehaviour
             }
         }
        
+    }
+
+    public void resetButtons()
+    {
+        Button[] btns = this.GetComponentsInChildren<Button>(true);
+        for (int i = 0; i < btns.Length; i++)
+        {
+            buttons.Add(btns[i]);
+            buttonUsed[i] = false;
+        }
     }
 
 }

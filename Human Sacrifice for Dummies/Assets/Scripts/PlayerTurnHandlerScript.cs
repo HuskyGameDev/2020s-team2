@@ -26,6 +26,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     // turn system stuff
     public turnSystemScript TurnSystem;
     public TurnClass turnClass;
+    public HUD hud;
     public bool isTurn = false;
 
     // Start is called before the first frame update
@@ -121,6 +122,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
+        hud.resetButtons();
     }
 
     void UseStaffWhack()
