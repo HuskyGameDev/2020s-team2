@@ -90,7 +90,6 @@ public class PlayerMovement : Move
                         EndTurn();
                     }
                 }
-
             }
         }
     }
@@ -124,9 +123,6 @@ public class PlayerMovement : Move
     // go through all processes needed for ending turn
     void EndTurn()
     {
-        //Resets move range
-        gameObject.GetComponent<PlayerMovement>().moveRange = 3;
-
         // update start position and occupied flags on the grid
         PositionUpdate();
 

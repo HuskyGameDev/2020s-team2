@@ -123,6 +123,10 @@ public class PlayerTurnHandlerScript : MonoBehaviour
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
         hud.resetButtons();
+
+        //Resets move range
+        wizard.GetComponent<PlayerMovement>().moveRange = 3;
+        sacrifice.GetComponent<PlayerMovement>().moveRange = 3;
     }
 
     void UseStaffWhack()
