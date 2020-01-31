@@ -68,6 +68,7 @@ public class ForgottenCurse : MonoBehaviour
                     if (pos == mousePoint)
                     {
                         // curse target
+                        FindObjectOfType<AudioManager>().PlaySound("Forgotten Curse");
                         CurseTarget(pos);
                         EndAttack();
                     }
@@ -76,6 +77,7 @@ public class ForgottenCurse : MonoBehaviour
                 // if you click yourself, skip attack
                 if (worldPoint == mousePoint)
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("Forgotten Curse");
                     EndAttack();
                     playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }

@@ -56,6 +56,7 @@ public class enemyMoveScript : Move
         if (health <= 0)
         {
             // any effects that happen on enemy death goes here.
+            FindObjectOfType<AudioManager>().PlaySound("Enemy Death");
             var tiles = GameTiles.instance.tiles;
             if (tiles.TryGetValue(new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0), out _tile))
             {
@@ -77,6 +78,7 @@ public class enemyMoveScript : Move
 
             // if your turn go to wait and move
             StartCoroutine("WaitAndMove");
+            FindObjectOfType<AudioManager>().PlaySound("Player Turn");
         }
     }
 
@@ -102,7 +104,6 @@ public class enemyMoveScript : Move
 
         //end turn
         EndTurn();
-
         StopCoroutine("WaitAndMove");
     }
 

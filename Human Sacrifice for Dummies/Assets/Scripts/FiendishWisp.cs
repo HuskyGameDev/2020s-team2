@@ -68,6 +68,7 @@ public class FiendishWisp : MonoBehaviour
                     if (pos == mousePoint)
                     {
                         // damage target
+                        FindObjectOfType<AudioManager>().PlaySound("Fiendish Wisp");
                         FiendishWispDoDamage(pos);
                         EndAttack();
                     }
@@ -76,6 +77,7 @@ public class FiendishWisp : MonoBehaviour
                 // if you click yourself, skip attack
                 if (worldPoint == mousePoint)
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("Fiendish Wisp");
                     EndAttack();
                     playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }

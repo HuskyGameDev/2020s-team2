@@ -116,6 +116,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
 
     void TurnEnder()
     {
+        FindObjectOfType<AudioManager>().PlaySound("Enemy Turn"); //When end turn button is hit, enemy turn sound will play
         wizardHasMoved = false;
         sacrificeHasMoved = false;
         wizardHasAttacked = false;
