@@ -20,14 +20,39 @@ public class ShadowStep : MonoBehaviour
     {
         if (isTurn)
         {
+            GameObject sac = GameObject.FindGameObjectWithTag("Sacrifice");
             gameObject.GetComponent<PlayerMovement>().moveRange += 1;
+            sac.GetComponent<PlayerMovement>().moveRange += 1;
             EndAttack();
         }
     }
     void EndAttack()
     {
+        ClearColors();
         hasSearched = false;
         isTurn = false;
         playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = true;
+    }
+
+    void ClearColors()
+    {
+        var tiles = GameTiles.instance.tiles;
+        var worldPoint1 = new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0);
+        var worldPoint2 = new Vector3Int(Mathf.RoundToInt(targetPosition.x), Mathf.FloorToInt(targetPosition.y), 0);
+
+        // clear wizard tile
+        if (tiles.TryGetValue(worldPoint1, out _tile))
+        {
+            _tile.TilemapMember.SetTileFlags(_tile.LocalPlace, TileFlags.None);
+            _tile.TilemapMember.SetColor(_tile.LocalPlace, Color.white);
+        }
+
+        // clear sac tile
+        if (tiles.TryGetValue(worldPoint2, out _tile))
+        {
+            _tile.TilemapMember.SetTileFlags(_tile.LocalPlace, TileFlags.None);
+            _tile.TilemapMember.SetColor(_tile.LocalPlace, Color.white);
+        }
+
     }
 }
