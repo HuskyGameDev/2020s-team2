@@ -20,7 +20,7 @@ public class HUD : MonoBehaviour
 
     public List<Button> buttons;
     
-    bool[] buttonUsed = {false,false,false,false,false, false};
+    bool[] buttonUsed = {false,false,false,false,false,false};
 
 
     // Start is called before the first frame update
@@ -106,7 +106,7 @@ public class HUD : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
 
-        for (int i = 0; i < buttons.Count; i++)
+        for (int i = 0; i < 6; i++)
         {
             if (!buttonUsed[i])
             {
@@ -141,7 +141,7 @@ public class HUD : MonoBehaviour
 
         
 
-        for (int i = 0; i < buttons.Count; i++)
+        for (int i = 0; i < 6; i++)
         {
             if (!buttonUsed[i])
             {
@@ -156,7 +156,7 @@ public class HUD : MonoBehaviour
         Button[] btns = this.GetComponentsInChildren<Button>(true);
         for (int i = 0; i < btns.Length; i++)
         {
-            buttons.Add(btns[i]);
+            //buttons.Add(btns[i]);
             buttonUsed[i] = false;
         }
     }

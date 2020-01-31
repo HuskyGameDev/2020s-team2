@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class PersistentData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public static string playerName;
+    public string[] abilities;
 }
+
