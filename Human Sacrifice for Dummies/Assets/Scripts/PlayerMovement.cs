@@ -48,7 +48,7 @@ public class PlayerMovement : Move
                 _tile.Occupied = false;
             }
             Destroy(gameObject);
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("YouLose");
         }
 
         // check if it is your turn

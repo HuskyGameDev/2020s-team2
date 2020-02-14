@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChooseAbility.unity
     guid: b433f84c2f323674e9f51419f279d612
+  - enabled: 1
+    path: Assets/Scenes/YouLose.unity
+    guid: e64a03a183c4bb94e832f6dfffd7a46a
   m_configObjects: {}

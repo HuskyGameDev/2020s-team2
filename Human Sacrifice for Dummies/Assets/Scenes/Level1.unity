@@ -1278,7 +1278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e403b10f06b6dce429b30316f2be3d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilities: []
 --- !u!1 &1048991058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,9 +1737,9 @@ MonoBehaviour:
   staffWhack: {fileID: 1340456524}
   fiendishWisp: {fileID: 0}
   forgottenCurse: {fileID: 118621935}
-  infernalBubble: {fileID: 833057195}
+  infernalBubble: {fileID: 0}
   shadyswitcheroo: {fileID: 0}
-  shadowstep: {fileID: 0}
+  shadowstep: {fileID: 833057195}
   wizardHasMoved: 0
   sacrificeHasMoved: 0
   wizardHasAttacked: 0

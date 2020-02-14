@@ -20,6 +20,7 @@ public class ShadowStep : MonoBehaviour
     {
         if (isTurn)
         {
+            //Add one block of movement to wizard and sarifice for the turn
             GameObject sac = GameObject.FindGameObjectWithTag("Sacrifice");
             gameObject.GetComponent<PlayerMovement>().moveRange += 1;
             sac.GetComponent<PlayerMovement>().moveRange += 1;
