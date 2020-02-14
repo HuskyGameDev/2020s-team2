@@ -2195,7 +2195,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546553992}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
 --- !u!1001 &1657575746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2275,8 +2274,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2afdfa7ec4b1c2c4b99bb4232bbc32e2, type: 3}
-=======
->>>>>>> parent of 24038f1... Added Knight
 --- !u!1 &1745991349
 GameObject:
   m_ObjectHideFlags: 0
