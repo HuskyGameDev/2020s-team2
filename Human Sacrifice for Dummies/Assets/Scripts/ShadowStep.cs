@@ -24,6 +24,7 @@ public class ShadowStep : MonoBehaviour
             GameObject sac = GameObject.FindGameObjectWithTag("Sacrifice");
             gameObject.GetComponent<PlayerMovement>().moveRange += 1;
             sac.GetComponent<PlayerMovement>().moveRange += 1;
+            FindObjectOfType<AudioManager>().PlaySound("Shadow Step"); // Play Shadow Step Sound
             EndAttack();
         }
     }

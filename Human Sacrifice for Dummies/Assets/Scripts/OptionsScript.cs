@@ -10,7 +10,7 @@ public class OptionsScript : MonoBehaviour
 
     void Start()
     {
-        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMusic();
+     //   GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMainMusic();
         Button exit = Exit.GetComponent<Button>();
         exit.onClick.AddListener(ExitOnClick);
     }

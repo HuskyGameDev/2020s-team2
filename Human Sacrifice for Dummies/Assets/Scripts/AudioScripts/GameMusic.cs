@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameMusic : MonoBehaviour
 {
-    private AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioSource BattleMusic;
+    public AudioSource DefeatMusic;
+
     private static GameMusic instance;
+
     private void Awake()
     {
         if(!instance)
@@ -17,21 +19,30 @@ public class GameMusic : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(transform.gameObject);
-        audioSource = GetComponent<AudioSource>();
-        //audioSource.loop = true;
+        audioSource.loop = true;
     }
 
-    public void PlayMusic()
+    public void PlayMainMusic()
     {
-        if (audioSource.isPlaying) return;
-        else
-        {
-            audioSource.Play();
-        }
+        audioSource.Play();
+    }
+    public void PlayBattleMusic()
+    {
+        BattleMusic.Play();
+    }
+
+    public void PlayDefeatMusic()
+    {
+        DefeatMusic.Play();
     }
 
     public void StopMusic()
     {
         audioSource.Stop();
+    }
+
+    public void StopBattleMusic()
+    {
+        BattleMusic.Stop();
     }
 }

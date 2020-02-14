@@ -9,7 +9,7 @@ public class MainMenuScript : MonoBehaviour
     public Button Play; 
     public Button Options;
     public Button Exit;
-    
+
     void Start()
     {
         //get all of the buttons from the scene and add the appropriate listener
@@ -19,12 +19,14 @@ public class MainMenuScript : MonoBehaviour
         play.onClick.AddListener(PlayOnClick);
         options.onClick.AddListener(OptionsOnClick);
         exit.onClick.AddListener(ExitOnClick);
+
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMainMusic();
     }
    
     void PlayOnClick()
     {
         //start game scene
-        FindObjectOfType<AudioManager>().PlaySound("Menu Button Forwards");
+        FindObjectOfType<AudioManager>().PlaySound("Evil Laugh");
         SceneManager.LoadScene("ChooseAbility");
     }
 

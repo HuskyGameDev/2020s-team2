@@ -22,6 +22,10 @@ public class YouLoseScript : MonoBehaviour
         mainMenu.onClick.AddListener(MainMenuOnClick);
         restart.onClick.AddListener(PlayOnClick);
         rageQuit.onClick.AddListener(ExitOnClick);
+
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().StopBattleMusic();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayDefeatMusic();
+
     }
 
     void PlayOnClick()
