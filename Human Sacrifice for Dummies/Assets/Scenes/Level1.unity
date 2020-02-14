@@ -525,7 +525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709417520
 GameObject:
@@ -893,7 +893,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930549756
 GameObject:
@@ -1082,7 +1082,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1045802853
 GameObject:
@@ -1734,12 +1734,13 @@ MonoBehaviour:
   endTurn: {fileID: 1341337475}
   wizardMove: {fileID: 1048991060}
   sacrificeMove: {fileID: 1412315005}
-  staffWhack: {fileID: 1340456524}
+  staffWhack: {fileID: 0}
   fiendishWisp: {fileID: 0}
-  forgottenCurse: {fileID: 118621935}
+  forgottenCurse: {fileID: 0}
   infernalBubble: {fileID: 0}
   shadyswitcheroo: {fileID: 0}
-  shadowstep: {fileID: 833057195}
+  shadowstep: {fileID: 0}
+  viciousSlap: {fileID: 0}
   wizardHasMoved: 0
   sacrificeHasMoved: 0
   wizardHasAttacked: 0
@@ -1762,7 +1763,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340456522
 GameObject:

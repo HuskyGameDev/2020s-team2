@@ -18,6 +18,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     public Button infernalBubble;
     public Button shadyswitcheroo;
     public Button shadowstep;
+    public Button viciousSlap;
 
     public bool wizardHasMoved = false;
     public bool sacrificeHasMoved = false;
@@ -28,6 +29,8 @@ public class PlayerTurnHandlerScript : MonoBehaviour
     public TurnClass turnClass;
     public HUD hud;
     public bool isTurn = false;
+
+    List<Button> boundAbilities = new List<Button>();
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +43,43 @@ public class PlayerTurnHandlerScript : MonoBehaviour
 
         Button sacrificemove = sacrificeMove.GetComponent<Button>();
         sacrificemove.onClick.AddListener(MoveSacrifice);
+
+        boundAbilities.Add(hud.Ability1);
+        boundAbilities.Add(hud.Ability2);
+        boundAbilities.Add(hud.Ability3);
+
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log(boundAbilities[i]);
+            if (PersistentData.abilities[i] == "Staff Whack")
+            {
+                staffWhack = boundAbilities[i];
+            }
+            else if (PersistentData.abilities[i] == "Fiendish Wisp")
+            {
+                fiendishWisp = boundAbilities[i];
+            }
+            else if (PersistentData.abilities[i] == "Vicious Slap")
+            {
+                viciousSlap = boundAbilities[i];
+            }
+            else if (PersistentData.abilities[i] == "Forgotten Curse")
+            {
+                forgottenCurse = boundAbilities[i];
+            }
+            else if (PersistentData.abilities[i] == "Infernal Bubble")
+            {
+                infernalBubble = boundAbilities[i];
+            }
+            else if (PersistentData.abilities[i] == "Shady Switcheroo")
+            {
+                shadyswitcheroo = boundAbilities[i];
+            }
+            else if (PersistentData.abilities[i] == "Shadow Step")
+            {
+                shadowstep = boundAbilities[i];
+            }
+        }
 
         if (staffWhack != null)
         {

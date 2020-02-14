@@ -19,8 +19,9 @@ public class HUD : MonoBehaviour
     public Text Turn;
 
     public List<Button> buttons;
-    
-    bool[] buttonUsed = {false,false,false,false,false,false};
+
+    bool[] buttonUsed = { false, false, false, false, false, false };
+
 
 
     // Start is called before the first frame update
@@ -49,11 +50,16 @@ public class HUD : MonoBehaviour
         moveSac.onClick.AddListener(MoveSacOnClick);
         endturn.onClick.AddListener(EndOnClick);
 
+        Ability1.GetComponentInChildren<Text>().text = PersistentData.abilities[0];
+        Ability2.GetComponentInChildren<Text>().text = PersistentData.abilities[1];
+        Ability3.GetComponentInChildren<Text>().text = PersistentData.abilities[2];
+
+
     }
 
     void MovePlayerOnClick()
     {
-        StartCoroutine(waitMove(0));       
+        StartCoroutine(waitMove(0));
     }
 
     void MoveSacOnClick()
@@ -97,11 +103,11 @@ public class HUD : MonoBehaviour
     //the coroutine
     IEnumerator waitAction()
     {
-        for(int i = 0; i < buttons.Count; i++)
+        for (int i = 0; i < buttons.Count; i++)
         {
-                buttons[i].GetComponent<Button>().interactable = false;
+            buttons[i].GetComponent<Button>().interactable = false;
         }
-        
+
         //Replace with wait until <Abilityscript finishes>
         yield return new WaitForSeconds(1f);
 
@@ -125,11 +131,11 @@ public class HUD : MonoBehaviour
             buttons[i].GetComponent<Button>().interactable = false;
         }
 
-        if(which == 0)
+        if (which == 0)
         {
             buttonUsed[3] = true;
         }
-        else if(which == 1)
+        else if (which == 1)
         {
             buttonUsed[4] = true;
         }
@@ -139,7 +145,7 @@ public class HUD : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
 
-        
+
 
         for (int i = 0; i < 6; i++)
         {
@@ -148,7 +154,7 @@ public class HUD : MonoBehaviour
                 buttons[i].GetComponent<Button>().interactable = true;
             }
         }
-       
+
     }
 
     public void resetButtons()
