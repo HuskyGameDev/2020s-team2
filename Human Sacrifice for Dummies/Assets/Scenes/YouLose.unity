@@ -149,7 +149,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d4db7904ceac3489dd31a2c9c42d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Menu Button Forwards
+    audioClip: {fileID: 8300000, guid: 714f950c8b69e744998b269c959a1b12, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Menu Button Backwards
+    audioClip: {fileID: 8300000, guid: 88f90877d89174a45b1c5de768997848, type: 3}
+    volume: 1
+    source: {fileID: 0}
 --- !u!4 &111135013
 Transform:
   m_ObjectHideFlags: 0
@@ -1196,7 +1204,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3ffe25fe8263c714395684383a98de69, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

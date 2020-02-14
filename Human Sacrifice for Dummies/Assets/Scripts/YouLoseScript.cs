@@ -27,19 +27,19 @@ public class YouLoseScript : MonoBehaviour
     void PlayOnClick()
     {
         //start game scene
-//        FindObjectOfType<AudioManager>().PlaySound("Menu Button Forwards");
+        FindObjectOfType<AudioManager>().PlaySound("Menu Button Forwards");
         SceneManager.LoadScene("ChooseAbility");
     }
     void ExitOnClick()
     {
         //quit the game
-//        FindObjectOfType<AudioManager>().PlaySound("Menu Button Backwards");
+        FindObjectOfType<AudioManager>().PlaySound("Menu Button Backwards");
         Application.Quit();
     }
 
     void MainMenuOnClick()
     {
-//        FindObjectOfType<AudioManager>().PlaySound("Menu Button Backwards");
+        FindObjectOfType<AudioManager>().PlaySound("Menu Button Backwards");
         SceneManager.LoadScene("MainMenu");
     }
 }
