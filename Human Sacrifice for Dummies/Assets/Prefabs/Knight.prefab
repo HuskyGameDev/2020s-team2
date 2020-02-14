@@ -154,4 +154,4 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
   moveTo: {x: 0, y: 0, z: 0}
-  damage: 1
+  damage: 2
