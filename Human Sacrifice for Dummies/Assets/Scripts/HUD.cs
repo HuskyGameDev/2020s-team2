@@ -23,6 +23,7 @@ public class HUD : MonoBehaviour
     bool[] buttonUsed = {false,false,false,false,false,false};
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,11 @@ public class HUD : MonoBehaviour
         move.onClick.AddListener(MovePlayerOnClick);
         moveSac.onClick.AddListener(MoveSacOnClick);
         endturn.onClick.AddListener(EndOnClick);
+
+        Ability1.GetComponentInChildren<Text>().text = PersistentData.abilities[0];
+        Ability2.GetComponentInChildren<Text>().text = PersistentData.abilities[1];
+        Ability3.GetComponentInChildren<Text>().text = PersistentData.abilities[2];
+
 
     }
 
