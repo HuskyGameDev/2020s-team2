@@ -11,7 +11,7 @@ public class FiendishWisp : MonoBehaviour
     public bool hasSearched = false;
     public Vector2 startPosition;
     public Vector2 targetPosition;
-
+    public HUD hud;
     private WorldTile _tile;
 
     List<Vector3Int> neighbors = new List<Vector3Int>();
@@ -194,10 +194,12 @@ public class FiendishWisp : MonoBehaviour
 
     void EndAttack()
     {
+        hud.unlockButtons();
         ClearColors();
         hasSearched = false;
         isTurn = false;
         playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = true;
+        
     }
 
     void ClearColors()

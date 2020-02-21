@@ -112,13 +112,7 @@ public class HUD : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
 
-        for (int i = 0; i < 6; i++)
-        {
-            if (!buttonUsed[i])
-            {
-                buttons[i].GetComponent<Button>().interactable = true;
-            }
-        }
+       
 
 
     }
@@ -164,6 +158,17 @@ public class HUD : MonoBehaviour
         {
             //buttons.Add(btns[i]);
             buttonUsed[i] = false;
+        }
+    }
+
+    public void unlockButtons()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (!buttonUsed[i])
+            {
+                buttons[i].GetComponent<Button>().interactable = true;
+            }
         }
     }
 

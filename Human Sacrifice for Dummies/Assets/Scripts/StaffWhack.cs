@@ -11,7 +11,7 @@ public class StaffWhack : MonoBehaviour
     public bool hasSearched = false;
     public Vector2 startPosition;
     public Vector2 targetPosition;
-
+    public HUD hud;
     private WorldTile _tile;
 
     List<Vector3Int> neighbors = new List<Vector3Int>();
@@ -157,6 +157,7 @@ public class StaffWhack : MonoBehaviour
 
     void EndAttack()
     {
+        hud.unlockButtons();
         ClearColors();
         hasSearched = false;
         isTurn = false;

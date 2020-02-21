@@ -117,7 +117,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
             shadowStep.onClick.AddListener(useshadowStep);
         }
 
-        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayBattleMusic();
+        //GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayBattleMusic();
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();

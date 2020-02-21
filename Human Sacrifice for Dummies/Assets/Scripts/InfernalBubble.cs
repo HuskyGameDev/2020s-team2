@@ -12,7 +12,7 @@ public class InfernalBubble : MonoBehaviour
     public Vector2 startPosition;
     public Vector2 targetPosition;
     public Vector2 tempPosition;
-
+    public HUD hud;
     private WorldTile _tile;
 
     // Update is called once per frame
@@ -88,6 +88,7 @@ public class InfernalBubble : MonoBehaviour
 
     void EndAttack()
     {
+        hud.unlockButtons();
         ClearColors();
         hasSearched = false;
         isTurn = false;
