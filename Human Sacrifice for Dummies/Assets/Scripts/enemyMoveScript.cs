@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -21,6 +22,7 @@ public class enemyMoveScript : Move
     public Vector3 moveTo;
 
     public int damage;
+    public bool ranged = false;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,9 @@ public class enemyMoveScript : Move
             _tile.Occupied = true;
             _tile.Player = false;
         }
+
+        if (gameObject.name.Equals("Ranged Enemy"))
+            ranged = true;
     }
 
     // Update is called once per frame
@@ -87,24 +92,47 @@ public class enemyMoveScript : Move
         // wait
         yield return new WaitForSeconds(0.5f);
 
+        //Finds location of Wizard
+        GameObject[] gameObjects = FindObjectsOfType<GameObject>();
+        GameObject player = null;
+        foreach (GameObject go in gameObjects)
+        {
+            if (go.name.Equals("Wizard"))
+                player = go;
+        }
+
         // if cursed skip movement
         if (!isCursed)
         {
-            // movement goes here
-            targetPosition.x = Mathf.Round(moveTo.x);
-            targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
-            transform.position = targetPosition;
+            //Finds distance in relation to wizard
+            Vector2Int distanceFromPlayer = new Vector2Int(Mathf.RoundToInt(transform.position.x - player.transform.position.x), 
+                Mathf.FloorToInt(transform.position.y - player.transform.position.y));
+
+            // if a melee enemy or if far from player, move towards player
+            if(!ranged || ((distanceFromPlayer.x > 3 || distanceFromPlayer.x < -3) || (distanceFromPlayer.y > 3 || distanceFromPlayer.y < -3))) {
+                targetPosition.x = Mathf.Round(moveTo.x);
+                targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
+                transform.position = targetPosition;
+            }
         }
 
         yield return new WaitForSeconds(0.5f);
 
         //attack goes here
         var attackFrom = new Vector3Int(Mathf.RoundToInt(targetPosition.x), Mathf.FloorToInt(targetPosition.y), 0);
-        EnemyMelee(attackFrom);
+        //if (ranged)
+            rangedMelee(player);
+        //else
+            EnemyMelee(attackFrom);
 
         //end turn
         EndTurn();
         StopCoroutine("WaitAndMove");
+    }
+
+    private void rangedMelee(GameObject player)
+    {
+        
     }
 
     void ChangeStartPosition()

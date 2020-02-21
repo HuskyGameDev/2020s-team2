@@ -141,13 +141,7 @@ public class HUD : MonoBehaviour
 
 
 
-        for (int i = 0; i < 6; i++)
-        {
-            if (!buttonUsed[i])
-            {
-                buttons[i].GetComponent<Button>().interactable = true;
-            }
-        }
+        unlockButtons();
 
     }
 
