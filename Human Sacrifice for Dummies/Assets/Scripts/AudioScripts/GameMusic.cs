@@ -2,9 +2,10 @@
 
 public class GameMusic : MonoBehaviour
 {
-    public AudioSource audioSource;
+    public AudioSource MenuMusic;
     public AudioSource BattleMusic;
     public AudioSource DefeatMusic;
+    public AudioSource VictoryMusic;
 
     private static GameMusic instance;
 
@@ -19,30 +20,41 @@ public class GameMusic : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(transform.gameObject);
-        audioSource.loop = true;
+
+        MenuMusic.loop = true;
+        BattleMusic.loop = true;
+        DefeatMusic.loop = true;
+        VictoryMusic.loop = true; 
     }
 
-    public void PlayMainMusic()
+    public void PlayMenuMusic()
     {
-        audioSource.Play();
+        StopMusic();
+        MenuMusic.Play();
     }
     public void PlayBattleMusic()
     {
+        StopMusic();
         BattleMusic.Play();
     }
 
     public void PlayDefeatMusic()
     {
+        StopMusic();
         DefeatMusic.Play();
+    }
+
+    public void PlayVictoryMusic()
+    {
+        StopMusic();
+        VictoryMusic.Play();
     }
 
     public void StopMusic()
     {
-        audioSource.Stop();
-    }
-
-    public void StopBattleMusic()
-    {
+        MenuMusic.Stop();
         BattleMusic.Stop();
+        DefeatMusic.Stop();
+        VictoryMusic.Stop();
     }
 }

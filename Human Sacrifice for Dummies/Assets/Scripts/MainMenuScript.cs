@@ -20,7 +20,7 @@ public class MainMenuScript : MonoBehaviour
         options.onClick.AddListener(OptionsOnClick);
         exit.onClick.AddListener(ExitOnClick);
 
-        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMainMusic();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMenuMusic();
     }
    
     void PlayOnClick()
