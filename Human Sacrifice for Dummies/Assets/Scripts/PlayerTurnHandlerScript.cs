@@ -117,7 +117,13 @@ public class PlayerTurnHandlerScript : MonoBehaviour
             shadowStep.onClick.AddListener(useshadowStep);
         }
 
-        //GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayBattleMusic();
+        if (viciousSlap != null)
+        {
+            Button viciousslap = viciousSlap.GetComponent<Button>();
+            viciousslap.onClick.AddListener(useViciousSlap);
+        }
+
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayBattleMusic();
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
@@ -128,6 +134,14 @@ public class PlayerTurnHandlerScript : MonoBehaviour
             {
                 turnClass = tc;
             }
+        }
+    }
+
+    private void useViciousSlap()
+    {
+        if(!wizardHasAttacked)
+        {
+            wizard.GetComponent<ViciousSlap>().isTurn = true;
         }
     }
 

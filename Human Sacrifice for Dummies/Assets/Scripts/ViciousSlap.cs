@@ -70,7 +70,7 @@ public class ViciousSlap : MonoBehaviour
                     {
                         // damage target
                         FindObjectOfType<AudioManager>().PlaySound("Staff Whack");
-                        attackTarget(pos, pos - worldPoint, worldPoint);
+                        attackTarget(pos, pos - worldPoint);
                         EndAttack();
                     }
                 }
@@ -86,7 +86,7 @@ public class ViciousSlap : MonoBehaviour
         }
     }
 
-    private void attackTarget(Vector3Int enemyPos, Vector3Int direction, Vector3Int playerPos)
+    private void attackTarget(Vector3Int enemyPos, Vector3Int direction)
     {
         WorldTile neighbor = null;
         Vector3Int up = new Vector3Int(enemyPos.x, enemyPos.y + 1, 0);
@@ -95,13 +95,11 @@ public class ViciousSlap : MonoBehaviour
         Vector3Int right = new Vector3Int(enemyPos.x + 1, enemyPos.y, 0);
 
         var tiles = GameTiles.instance.tiles;
-        WorldTile enemyNeighborTile = null;
 
         tiles.TryGetValue(enemyPos + direction, out _tile);
 
         if (_tile != null)
         {
-            DoDamage(enemyPos);
             pushEnemy(direction, enemyPos);
         }
         else
@@ -115,7 +113,8 @@ public class ViciousSlap : MonoBehaviour
         tPos.y = Mathf.Floor(enemyPos.y) + 0.5f;
 
         // damage target at position
-        var objects = GameObject.FindObjectsOfType<GameObject>();
+        var objects = FindObjectsOfType<GameObject>();
+        var tiles = GameTiles.instance.obstacleTiles;
 
         foreach (GameObject go in objects)
         {
@@ -124,7 +123,23 @@ public class ViciousSlap : MonoBehaviour
             {
                 if (tPos.Equals(go.transform.position))
                 {
+                    Vector3Int pushPosition = enemyPos + new Vector3Int(direction.x, direction.y, 0);
                     go.transform.position = enemyPos + new Vector3(direction.x, direction.y + .5f, 0);
+                    if (tiles.TryGetValue(pushPosition, out _tile)) {
+                        if (_tile.Name.Equals("water"))
+                        {
+                            DestroyEnemy(pushPosition);
+                        }
+                        if (_tile.Name.Equals("Rock"))
+                        {
+                            DoDamage(pushPosition);
+                            DoDamage(pushPosition);
+                            go.transform.position = enemyPos;
+                        }
+                    } else
+                    {
+                        DoDamage(pushPosition);
+                    }
                 }
             }
         }
