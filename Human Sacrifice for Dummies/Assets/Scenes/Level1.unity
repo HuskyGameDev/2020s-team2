@@ -2752,6 +2752,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3189380412475788771, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: playerTurnHandler
+      value: 
+      objectReference: {fileID: 1241554508}
+    - target: {fileID: 3189380412475788771, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 930549758}
     - target: {fileID: 2691535172756552238, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: m_Name
