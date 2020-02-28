@@ -1556,7 +1556,7 @@ PrefabInstance:
     - target: {fileID: 2505214233416326869, guid: 6c132d94747659b4bafa250640184cae,
         type: 3}
       propertyPath: hasSearched
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c132d94747659b4bafa250640184cae, type: 3}
@@ -2709,6 +2709,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: -7, y: 4, z: 0}
+    second:
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -6, y: 4, z: 0}
     second:
       m_TileIndex: 4
@@ -2868,6 +2877,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 107de0bdaba1c04428fa9c6459c57713, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 4992fd6a2b800184ea897daf06a74b23, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 230562bf5998c224dbb289677659d954, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 54
     m_Data: {fileID: -5739872626479082224, guid: 74792f088ba719f4981cfe5797fce3d9,
@@ -2901,8 +2912,11 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 2370084920875401382, guid: 74792f088ba719f4981cfe5797fce3d9,
       type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1382488928348750009, guid: 74792f088ba719f4981cfe5797fce3d9,
+      type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 65
+  - m_RefCount: 66
     m_Data:
       e00: 1
       e01: 0
@@ -2921,7 +2935,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 65
+  - m_RefCount: 66
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3249,7 +3263,8 @@ GameObject:
   - component: {fileID: 1533663416}
   - component: {fileID: 1533663415}
   - component: {fileID: 1533663414}
-  m_Layer: 0
+  - component: {fileID: 1533663417}
+  m_Layer: 8
   m_Name: Alter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3399,6 +3414,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1533663417
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533663412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1537656064
 GameObject:
   m_ObjectHideFlags: 0
