@@ -15,7 +15,7 @@ public class HUD : MonoBehaviour
     public Button Move;
     public Button EndTurn;
     public Button MoveSac;
-
+    public GameObject hpBar;
     public Text Turn;
 
     public List<Button> buttons;

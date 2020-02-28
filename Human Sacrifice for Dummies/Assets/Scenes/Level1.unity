@@ -956,6 +956,7 @@ MonoBehaviour:
   Move: {fileID: 1048991060}
   EndTurn: {fileID: 1341337475}
   MoveSac: {fileID: 1412315005}
+  hpBar: {fileID: 471854486}
   Turn: {fileID: 1856234382}
   buttons: []
 --- !u!114 &930549759
