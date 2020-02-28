@@ -123,7 +123,7 @@ public class PlayerTurnHandlerScript : MonoBehaviour
             viciousslap.onClick.AddListener(useViciousSlap);
         }
 
-        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayBattleMusic();
+//        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayBattleMusic();
 
         // load turn system
         TurnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript>();
