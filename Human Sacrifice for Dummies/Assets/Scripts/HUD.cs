@@ -20,7 +20,7 @@ public class HUD : MonoBehaviour
 
     public List<Button> buttons;
 
-    bool[] buttonUsed = { false, false, false, false, false, false };
+    public bool[] buttonUsed = { false, false, false, false, false, false };
 
 
 
