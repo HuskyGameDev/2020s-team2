@@ -1591,6 +1591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tilemap: {fileID: 5530221544080489080}
+  waterTiles: {fileID: 5530221545341399887}
+  rockTiles: {fileID: 5530221544947776034}
 --- !u!1 &5530221545341399875
 GameObject:
   m_ObjectHideFlags: 0
