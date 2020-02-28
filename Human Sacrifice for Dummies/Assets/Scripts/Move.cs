@@ -14,7 +14,7 @@ public class Move : MonoBehaviour
     // this will record the / a shortest path from start to all positions on map
     public Dictionary<Vector3Int, Vector3Int> pathChart = new Dictionary<Vector3Int, Vector3Int>();
 
-    public int health;
+    public float health;
     public int moveRange;
 
     //used for player movement

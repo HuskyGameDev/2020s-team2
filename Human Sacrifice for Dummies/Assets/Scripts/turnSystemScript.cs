@@ -63,7 +63,6 @@ public class turnSystemScript : MonoBehaviour
             if (playersGroup[i].playerGameObject == null)
             {
                 // game object was destroyed
-                print("object has 0 hp");
                 playersGroup[i].wasTurnPrev = true;
             }
 

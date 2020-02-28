@@ -6,8 +6,11 @@ public class GameTiles : MonoBehaviour
 {
     public static GameTiles instance;
     public Tilemap Tilemap;
+    public Tilemap waterTiles;
+    public Tilemap rockTiles;
 
     public Dictionary<Vector3, WorldTile> tiles;
+    public Dictionary<Vector3, WorldTile> obstacleTiles;
 
     private void Awake()
     {
@@ -44,6 +47,45 @@ public class GameTiles : MonoBehaviour
             };
 
             tiles.Add(tile.LocalPlace, tile);
+        }
+
+        obstacleTiles = new Dictionary<Vector3, WorldTile>();
+        foreach (Vector3Int pos in waterTiles.cellBounds.allPositionsWithin)
+        {
+            var localPlace = new Vector3Int(pos.x, pos.y, pos.z);
+
+            if (!waterTiles.HasTile(localPlace)) continue;
+            var tile = new WorldTile
+            {
+                LocalPlace = localPlace,
+                WorldLocation = Tilemap.CellToWorld(localPlace),
+                TileBase = Tilemap.GetTile(localPlace),
+                TilemapMember = Tilemap,
+                Name = localPlace.x + "," + localPlace.y,
+                Occupied = false,
+                Cost = 1 // TODO: Change this with the proper cost from ruletile
+            };
+            
+            obstacleTiles.Add(tile.LocalPlace, tile);
+        }
+
+        foreach (Vector3Int pos in rockTiles.cellBounds.allPositionsWithin)
+        {
+            var localPlace = new Vector3Int(pos.x, pos.y, pos.z);
+
+            if (!rockTiles.HasTile(localPlace)) continue;
+            var tile = new WorldTile
+            {
+                LocalPlace = localPlace,
+                WorldLocation = Tilemap.CellToWorld(localPlace),
+                TileBase = Tilemap.GetTile(localPlace),
+                TilemapMember = Tilemap,
+                Name = localPlace.x + "," + localPlace.y,
+                Occupied = false,
+                Cost = 1 // TODO: Change this with the proper cost from ruletile
+            };
+
+            obstacleTiles.Add(tile.LocalPlace, tile);
         }
     }
 }

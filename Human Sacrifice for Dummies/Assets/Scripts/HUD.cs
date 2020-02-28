@@ -8,19 +8,19 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public Text PlayerName;
-
+    public Move move;
     public Button Ability1;
     public Button Ability2;
     public Button Ability3;
     public Button Move;
     public Button EndTurn;
     public Button MoveSac;
-
+    public GameObject hpBar;
     public Text Turn;
 
     public List<Button> buttons;
 
-    bool[] buttonUsed = { false, false, false, false, false, false };
+    public bool[] buttonUsed = { false, false, false, false, false, false };
 
 
 
@@ -164,6 +164,12 @@ public class HUD : MonoBehaviour
                 buttons[i].GetComponent<Button>().interactable = true;
             }
         }
+    }
+
+    float normalizeHealth(float health)
+    {
+
+        return 0f;
     }
 
 }

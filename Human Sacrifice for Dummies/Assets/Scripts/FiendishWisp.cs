@@ -78,7 +78,11 @@ public class FiendishWisp : MonoBehaviour
                 if (worldPoint == mousePoint)
                 {
                     FindObjectOfType<AudioManager>().PlaySound("Fiendish Wisp");
+                    hud.buttonUsed[0] = false;
+                    hud.buttonUsed[1] = false;
+                    hud.buttonUsed[2] = false;
                     EndAttack();
+                    
                     playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }
             }

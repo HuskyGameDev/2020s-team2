@@ -160,6 +160,7 @@ MonoBehaviour:
   infernalBubble: {fileID: 0}
   shadyswitcheroo: {fileID: 0}
   shadowstep: {fileID: 368807941}
+  viciousSlap: {fileID: 0}
   wizardHasMoved: 0
   sacrificeHasMoved: 0
   wizardHasAttacked: 0
@@ -1646,6 +1647,7 @@ MonoBehaviour:
   hasSearched: 0
   startPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
+  hud: {fileID: 0}
 --- !u!114 &897845176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,6 +1666,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   tempPosition: {x: 0, y: 0}
+  hud: {fileID: 0}
 --- !u!1 &906428388
 GameObject:
   m_ObjectHideFlags: 0

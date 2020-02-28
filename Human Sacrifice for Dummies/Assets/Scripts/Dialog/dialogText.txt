@@ -1,0 +1,8 @@
+Use the mouse to hit the buttons on the left side of the screen. If you need to go back, press the left arrow key.
+Each turn is compromised by one movement for the necromancer, one movement for the sacrifice, and one attack by the necromancer in any order.
+You can move the necromancer and sacrifice by pressing the buttons labeled "Move Necro" and "Move Sac."
+The necromancer and sacrifice can move 3 spaces at a time by default.
+Press "End Turn" to end turn. Enemies will have a turn after you finish your turn.
+Once the enemy turn ends, it will be the your turn again.
+The goal is to get to get the sacrafice to the alter without either the sacrifice or the necromancer dying.
+You can play now (End of instruction)
