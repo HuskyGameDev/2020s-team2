@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public Text PlayerName;
-
+    public Move move;
     public Button Ability1;
     public Button Ability2;
     public Button Ability3;
@@ -164,6 +164,12 @@ public class HUD : MonoBehaviour
                 buttons[i].GetComponent<Button>().interactable = true;
             }
         }
+    }
+
+    float normalizeHealth(float health)
+    {
+
+        return 0f;
     }
 
 }

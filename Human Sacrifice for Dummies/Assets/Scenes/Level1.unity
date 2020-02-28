@@ -950,6 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerName: {fileID: 1830982862}
+  move: {fileID: 0}
   Ability1: {fileID: 1340456524}
   Ability2: {fileID: 118621935}
   Ability3: {fileID: 833057195}
@@ -959,6 +960,7 @@ MonoBehaviour:
   hpBar: {fileID: 471854486}
   Turn: {fileID: 1856234382}
   buttons: []
+  buttonUsed: 000000000000
 --- !u!114 &930549759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2753,6 +2755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2691535172756552238, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: m_Name
+      value: Wizard
+      objectReference: {fileID: 0}
     - target: {fileID: 3189380412475788771, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: playerTurnHandler
@@ -2763,11 +2770,6 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
-    - target: {fileID: 2691535172756552238, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
-        type: 3}
-      propertyPath: m_Name
-      value: Wizard
-      objectReference: {fileID: 0}
     - target: {fileID: 5135332315781893582, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: m_LocalPosition.x
