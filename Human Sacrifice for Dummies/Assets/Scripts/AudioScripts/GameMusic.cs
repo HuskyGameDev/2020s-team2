@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameMusic : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameMusic : MonoBehaviour
     public AudioSource VictoryMusic;
 
     private static GameMusic instance;
+
+    static public Boolean isMenuMusic;
 
     private void Awake()
     {
@@ -20,32 +23,35 @@ public class GameMusic : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(transform.gameObject);
-
-        MenuMusic.loop = true;
-        BattleMusic.loop = true;
-        DefeatMusic.loop = true;
-        VictoryMusic.loop = true; 
     }
 
     public void PlayMenuMusic()
     {
+        MenuMusic.loop = true;
+        isMenuMusic = true;
         StopMusic();
         MenuMusic.Play();
     }
     public void PlayBattleMusic()
     {
+        BattleMusic.loop = true;
+        isMenuMusic = false;
         StopMusic();
         BattleMusic.Play();
     }
 
     public void PlayDefeatMusic()
     {
+        DefeatMusic.loop = true;
+        isMenuMusic = false;
         StopMusic();
         DefeatMusic.Play();
     }
 
     public void PlayVictoryMusic()
     {
+        VictoryMusic.loop = true;
+        isMenuMusic = false;
         StopMusic();
         VictoryMusic.Play();
     }
