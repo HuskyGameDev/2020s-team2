@@ -49,6 +49,19 @@ public class TextBox : MonoBehaviour
             {
                 currentLineNumber++;
             }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                currentLineNumber++;
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow)) // Move Backwards through dialog
+            {
+                if (currentLineNumber > 0)
+                {
+                    currentLineNumber--;
+                }
+            }
         }
         if (currentLineNumber >= endAtLine)
         {
