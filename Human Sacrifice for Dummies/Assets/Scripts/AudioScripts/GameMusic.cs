@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameMusic : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameMusic : MonoBehaviour
     public AudioSource VictoryMusic;
 
     private static GameMusic instance;
+
+    static public Boolean isMenuMusic;
 
     private void Awake()
     {
@@ -29,23 +32,27 @@ public class GameMusic : MonoBehaviour
 
     public void PlayMenuMusic()
     {
+        isMenuMusic = true;
         StopMusic();
         MenuMusic.Play();
     }
     public void PlayBattleMusic()
     {
+        isMenuMusic = false;
         StopMusic();
         BattleMusic.Play();
     }
 
     public void PlayDefeatMusic()
     {
+        isMenuMusic = false;
         StopMusic();
         DefeatMusic.Play();
     }
 
     public void PlayVictoryMusic()
     {
+        isMenuMusic = false;
         StopMusic();
         VictoryMusic.Play();
     }

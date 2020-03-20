@@ -24,8 +24,10 @@ public class MainMenuScript : MonoBehaviour
         tutorial.onClick.AddListener(TutorialOnClick);
         options.onClick.AddListener(OptionsOnClick);
         exit.onClick.AddListener(ExitOnClick);
-
-        GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMenuMusic();
+        if (GameMusic.isMenuMusic != true)
+        {
+            GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().PlayMenuMusic();
+        }
         isTutorial = false;
     }
    
