@@ -13,6 +13,7 @@ public class FiendishWisp : MonoBehaviour
     public Vector2 targetPosition;
     public HUD hud;
     private WorldTile _tile;
+    public GameObject projectile;
 
     List<Vector3Int> neighbors = new List<Vector3Int>();
 
@@ -203,8 +204,8 @@ public class FiendishWisp : MonoBehaviour
         hasSearched = false;
         isTurn = false;
         playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = true;
-        
-    }
+
+        }
 
     void ClearColors()
     {
