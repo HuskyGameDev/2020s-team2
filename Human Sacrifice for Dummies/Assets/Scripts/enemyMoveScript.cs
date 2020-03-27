@@ -23,6 +23,7 @@ public class enemyMoveScript : Move
 
     public int damage;
     public bool ranged = false;
+    public bool hasMoved = false;
 
     // Start is called before the first frame update
     void Start()
@@ -104,25 +105,27 @@ public class enemyMoveScript : Move
         // if cursed skip movement
         if (!isCursed)
         {
-            //Finds distance in relation to wizard
-            Vector2Int distanceFromPlayer = new Vector2Int(Mathf.RoundToInt(transform.position.x - player.transform.position.x), 
-                Mathf.FloorToInt(transform.position.y - player.transform.position.y));
-
+            // if an enemy is ranged, move them
+            if(ranged)
+            {
+                moveRanged(player.transform.position);
+            }
             // if a melee enemy or if far from player, move towards player
-            if(!ranged || ((distanceFromPlayer.x > 3 || distanceFromPlayer.x < -3) || (distanceFromPlayer.y > 3 || distanceFromPlayer.y < -3))) {
+            else {
                 targetPosition.x = Mathf.Round(moveTo.x);
                 targetPosition.y = Mathf.Floor(moveTo.y) + 0.5f;
                 transform.position = targetPosition;
             }
+
         }
 
         yield return new WaitForSeconds(0.5f);
 
         //attack goes here
         var attackFrom = new Vector3Int(Mathf.RoundToInt(targetPosition.x), Mathf.FloorToInt(targetPosition.y), 0);
-        //if (ranged)
-            rangedMelee(player);
-        //else
+        if (ranged)
+            rangedAttack(player);
+        else
             EnemyMelee(attackFrom);
 
         //end turn
@@ -130,9 +133,83 @@ public class enemyMoveScript : Move
         StopCoroutine("WaitAndMove");
     }
 
-    private void rangedMelee(GameObject player)
+    private void rangedAttack(GameObject player)
     {
-        
+        //Finds distance in relation to wizard
+        Vector2Int distanceFromPlayer = new Vector2Int(Mathf.RoundToInt(transform.position.x - player.transform.position.x),
+            Mathf.FloorToInt(transform.position.y - player.transform.position.y));
+
+        if (distanceFromPlayer.x == 0 || distanceFromPlayer.y == 0)
+            EnemyDoDamage(new Vector3Int(Mathf.RoundToInt(player.transform.position.x), Mathf.RoundToInt(player.transform.position.y), 0), damage);
+    }
+
+    private void moveRanged(Vector3 playerPosition)
+    {
+        if (hasMoved)
+            return;
+
+        //Finds distance in relation to wizard
+        Vector2Int distanceFromPlayer = new Vector2Int(Mathf.RoundToInt(transform.position.x - playerPosition.x),
+            Mathf.FloorToInt(transform.position.y - playerPosition.y));
+
+        //Finds the direction in relation to the wizard that the enemy is
+        //If value is positive, the direction is up or right from the player. If it is positiove, the direction is down or left.
+        Vector2Int direction = new Vector2Int();
+        if (distanceFromPlayer.x == 0)
+            direction.x = 0;
+        else
+            direction.x = distanceFromPlayer.x / distanceFromPlayer.x;
+
+        if (distanceFromPlayer.y == 0)
+            direction.y = 0;
+        else
+            direction.y = distanceFromPlayer.y / distanceFromPlayer.y;
+
+        //If the distance to the palyer is close, and the enemy has a shot on the player, move away from the player
+        //First try x
+        if (Math.Abs(distanceFromPlayer.x) < (moveRange + 1) && distanceFromPlayer.y == 0)
+        {
+            targetPosition.x = playerPosition.x + direction.x * (moveRange + 1);
+            targetPosition.y = transform.position.y;
+        } 
+        //Next try y
+        else if (distanceFromPlayer.x == 0 && Math.Abs(distanceFromPlayer.y) < (moveRange + 1))
+        {
+            targetPosition.x = transform.position.x;
+            targetPosition.y = playerPosition.y + direction.y * (moveRange + 1);
+        }
+        //If neither of those are true, move towards the closest "0" to the player (so the enemy is in a straight line sight to the player
+        else
+        {
+            if(Math.Abs(distanceFromPlayer.x) < Math.Abs(distanceFromPlayer.y))
+            {
+                if (Math.Abs(distanceFromPlayer.x) <= moveRange)
+                {
+                    targetPosition.x = playerPosition.x;
+                    targetPosition.y = transform.position.y;
+                } 
+                else
+                {
+                    targetPosition.x = transform.position.x + moveRange * -direction.x;
+                    targetPosition.y = transform.position.y;
+                }
+            } 
+            else
+            {
+                if (Math.Abs(distanceFromPlayer.y) <= moveRange)
+                {
+                    targetPosition.x = transform.position.x;
+                    targetPosition.y = playerPosition.y;
+                }
+                else
+                {
+                    targetPosition.x = transform.position.x;
+                    targetPosition.y = transform.position.y + moveRange * -direction.y;
+                }
+            }
+        }
+        transform.position = targetPosition;
+        hasMoved = true;
     }
 
     void ChangeStartPosition()
@@ -182,6 +259,7 @@ public class enemyMoveScript : Move
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
         isCursed = false;
+        hasMoved = false;
     }
 
     // looks up down left and right to check if it can attack

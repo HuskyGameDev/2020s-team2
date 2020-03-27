@@ -94,7 +94,16 @@ public class SelectAbility : MonoBehaviour
             PersistentData.abilities[i] = chosen[i];
             //Debug.Log(PersistentData.abilities[i]);
         }
-        SceneManager.LoadScene("Level1");
+        if (MainMenuScript.isTutorial)
+        {
+            GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().StopMusic();
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("Music").GetComponent<GameMusic>().StopMusic();
+            SceneManager.LoadScene("Level1");
+        }
     }
 
     //Add the first ability to whichever slot is available in the chosen array
