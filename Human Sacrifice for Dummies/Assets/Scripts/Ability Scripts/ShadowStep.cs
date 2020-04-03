@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class ShadowStep : MonoBehaviour
 {
     public GameObject playerTurnHandler;
+    public GameObject animationObject;
 
     public bool isTurn = false;
     public bool hasSearched = false;
@@ -25,6 +26,8 @@ public class ShadowStep : MonoBehaviour
             gameObject.GetComponent<PlayerMovement>().moveRange += 1;
             sac.GetComponent<PlayerMovement>().moveRange += 1;
             FindObjectOfType<AudioManager>().PlaySound("Shadow Step"); // Play Shadow Step Sound
+            Instantiate(animationObject, sac.transform.position + new Vector3(0, -.1f, -1), sac.transform.rotation, sac.transform);
+            Instantiate(animationObject, gameObject.transform.position + new Vector3(0, -.1f, -1), gameObject.transform.rotation, gameObject.transform);
             EndAttack();
         }
     }

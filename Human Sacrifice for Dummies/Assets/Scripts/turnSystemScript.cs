@@ -30,7 +30,7 @@ public class turnSystemScript : MonoBehaviour
     }
 
     //cleans up variables to prepare for next turn
-    void ResetTurns() 
+    void ResetTurns()
     {
         for (int i = 0; i < playersGroup.Count; i++)
         {
@@ -53,38 +53,44 @@ public class turnSystemScript : MonoBehaviour
         // clear infernal bubble
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().bubble = false;
         GameObject.FindGameObjectWithTag("Sacrifice").GetComponent<PlayerMovement>().bubble = false;
+
+        // clear shadow step animation
+        ShadowStepAnimation[] shadowStepObjects = FindObjectsOfType<ShadowStepAnimation>();
+        foreach (ShadowStepAnimation shadowStep in shadowStepObjects)
+        {
+            shadowStep.destroyAnimation();
+        }
     }
 
-    //allows the next entity in the turn order to go
-    void UpdateTurns()
-    {
-        for(int i = 0;i<playersGroup.Count;i++)
-        {
-            if (playersGroup[i].playerGameObject == null)
-            {
-                // game object was destroyed
-                playersGroup[i].wasTurnPrev = true;
-            }
 
-            if (!playersGroup[i].wasTurnPrev)
+        //allows the next entity in the turn order to go
+        void UpdateTurns()
+        {
+            for (int i = 0; i < playersGroup.Count; i++)
             {
-                playersGroup[i].isTurn = true;
-                break;
-            }
-            else if (i == playersGroup.Count -1 && playersGroup[i].wasTurnPrev)
-            {
-                ResetTurns();
+                if (playersGroup[i].playerGameObject == null)
+                {
+                    // game object was destroyed
+                    playersGroup[i].wasTurnPrev = true;
+                }
+
+                if (!playersGroup[i].wasTurnPrev)
+                {
+                    playersGroup[i].isTurn = true;
+                    break;
+                }
+                else if (i == playersGroup.Count - 1 && playersGroup[i].wasTurnPrev)
+                {
+                    ResetTurns();
+                }
             }
         }
     }
-}
 
-[System.Serializable]
-public class TurnClass
-{
-    public GameObject playerGameObject;
-    public bool isTurn = false;
-    public bool wasTurnPrev = false;
-
-
-}
+    [System.Serializable]
+    public class TurnClass
+    {
+        public GameObject playerGameObject;
+        public bool isTurn = false;
+        public bool wasTurnPrev = false;
+    }
