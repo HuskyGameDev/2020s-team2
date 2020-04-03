@@ -70,7 +70,7 @@ public class ViciousSlap : MonoBehaviour
                     {
                         // damage target
                         FindObjectOfType<AudioManager>().PlaySound("Staff Whack");
-                        attackTarget(pos, pos - worldPoint);
+                        pushEnemy(pos, pos - worldPoint);
                         EndAttack();
                     }
                 }
@@ -86,27 +86,7 @@ public class ViciousSlap : MonoBehaviour
         }
     }
 
-    private void attackTarget(Vector3Int enemyPos, Vector3Int direction)
-    {
-        WorldTile neighbor = null;
-        Vector3Int up = new Vector3Int(enemyPos.x, enemyPos.y + 1, 0);
-        Vector3Int down = new Vector3Int(enemyPos.x, enemyPos.y - 1, 0);
-        Vector3Int left = new Vector3Int(enemyPos.x - 1, enemyPos.y, 0);
-        Vector3Int right = new Vector3Int(enemyPos.x + 1, enemyPos.y, 0);
-
-        var tiles = GameTiles.instance.tiles;
-
-        tiles.TryGetValue(enemyPos + direction, out _tile);
-
-        if (_tile != null)
-        {
-            pushEnemy(direction, enemyPos);
-        }
-        else
-            DestroyEnemy(enemyPos);
-    }
-
-    private void pushEnemy(Vector3Int direction, Vector3Int enemyPos)
+    private void pushEnemy(Vector3Int enemyPos, Vector3Int direction)
     {
         Vector2 tPos;
         tPos.x = Mathf.Round(enemyPos.x);
@@ -130,7 +110,7 @@ public class ViciousSlap : MonoBehaviour
                         {
                             DestroyEnemy(pushPosition);
                         }
-                        if (_tile.Name.Equals("Rock"))
+                        if (_tile.Name.Equals("rock"))
                         {
                             DoDamage(pushPosition);
                             DoDamage(pushPosition);

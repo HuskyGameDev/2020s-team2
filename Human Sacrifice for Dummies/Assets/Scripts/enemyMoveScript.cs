@@ -96,11 +96,24 @@ public class enemyMoveScript : Move
         //Finds location of Wizard
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         GameObject player = null;
+        GameObject sacrifice = null;
         foreach (GameObject go in gameObjects)
         {
             if (go.name.Equals("Wizard"))
                 player = go;
+            else if (go.name.Equals("Sacrifice"))
+                sacrifice = go;
         }
+
+        //check whether the wizard or the sacrifice is closer
+        Vector2Int wizardDistanceVector = new Vector2Int(Mathf.RoundToInt(transform.position.x - player.transform.position.x),
+            Mathf.FloorToInt(transform.position.y - player.transform.position.y));
+
+        Vector2Int sacrificeDistanceVector = new Vector2Int(Mathf.RoundToInt(transform.position.x - sacrifice.transform.position.x),
+            Mathf.FloorToInt(transform.position.y - sacrifice.transform.position.y));
+
+        float distanceFromWizard = wizardDistanceVector.magnitude;
+        float distanceFromSacrifice = sacrificeDistanceVector.magnitude;
 
         // if cursed skip movement
         if (!isCursed)
@@ -108,7 +121,11 @@ public class enemyMoveScript : Move
             // if an enemy is ranged, move them
             if(ranged)
             {
-                moveRanged(player.transform.position);
+
+                if (distanceFromWizard <= distanceFromSacrifice)
+                    moveRanged(player.transform.position);
+                else
+                    moveRanged(sacrifice.transform.position);
             }
             // if a melee enemy or if far from player, move towards player
             else {
@@ -124,7 +141,12 @@ public class enemyMoveScript : Move
         //attack goes here
         var attackFrom = new Vector3Int(Mathf.RoundToInt(targetPosition.x), Mathf.FloorToInt(targetPosition.y), 0);
         if (ranged)
-            rangedAttack(player);
+        {
+            if (distanceFromWizard <= distanceFromSacrifice)
+                rangedAttack(player);
+            else
+                rangedAttack(sacrifice);
+        }
         else
             EnemyMelee(attackFrom);
 
@@ -135,11 +157,26 @@ public class enemyMoveScript : Move
 
     private void rangedAttack(GameObject player)
     {
-        //Finds distance in relation to wizard
+        //Finds distance in relation to player
         Vector2Int distanceFromPlayer = new Vector2Int(Mathf.RoundToInt(transform.position.x - player.transform.position.x),
             Mathf.FloorToInt(transform.position.y - player.transform.position.y));
 
-        if (distanceFromPlayer.x == 0 || distanceFromPlayer.y == 0)
+        //Check to see if there is a rock in the way
+        var tiles = GameTiles.instance.obstacleTiles;
+        bool XInLine = false;
+        bool YInLine = false;
+        foreach(var tilePair in tiles)
+        {
+            Vector3 tilePosition = tilePair.Key;
+            WorldTile _tile = tilePair.Value;
+            if (tilePosition.x == player.transform.position.x && _tile.Name.Equals("rock") && distanceFromPlayer.y > Mathf.RoundToInt(transform.position.x - tilePosition.y))
+                XInLine = true;
+            else if (tilePosition.y - .5f == player.transform.position.y && _tile.Name.Equals("rock") && distanceFromPlayer.x > Mathf.RoundToInt(transform.position.x - tilePair.Key.x))
+                YInLine = true;
+        }
+
+        //If there is no rock in the way, deal damage
+        if ((distanceFromPlayer.x == 0 && !XInLine) || (distanceFromPlayer.y == 0 && !YInLine))
             EnemyDoDamage(new Vector3Int(Mathf.RoundToInt(player.transform.position.x), Mathf.RoundToInt(player.transform.position.y), 0), damage);
     }
 
@@ -165,7 +202,7 @@ public class enemyMoveScript : Move
         else
             direction.y = distanceFromPlayer.y / distanceFromPlayer.y;
 
-        //If the distance to the palyer is close, and the enemy has a shot on the player, move away from the player
+        //If the distance to the player is close, and the enemy has a shot on the player, move away from the player
         //First try x
         if (Math.Abs(distanceFromPlayer.x) < (moveRange + 1) && distanceFromPlayer.y == 0)
         {
@@ -178,7 +215,7 @@ public class enemyMoveScript : Move
             targetPosition.x = transform.position.x;
             targetPosition.y = playerPosition.y + direction.y * (moveRange + 1);
         }
-        //If neither of those are true, move towards the closest "0" to the player (so the enemy is in a straight line sight to the player
+        //If neither of those are true, move towards the closest "0" to the player (so the enemy is in a straight line sight to the player)
         else
         {
             if(Math.Abs(distanceFromPlayer.x) < Math.Abs(distanceFromPlayer.y))
@@ -208,6 +245,25 @@ public class enemyMoveScript : Move
                 }
             }
         }
+
+        //Check to make sure the target position is not outside the game boundaries
+        if (targetPosition.x > 4)
+            targetPosition.x = 4;
+        else if (targetPosition.x < -4)
+            targetPosition.x = -4;
+        if (targetPosition.y > 4.5)
+            targetPosition.y = 4.5f;
+        else if (targetPosition.y < -3.5)
+            targetPosition.y = -3.5f;
+
+        // Make sure enemy's do not hit rocks or water
+        var tiles = GameTiles.instance.obstacleTiles;
+        if (tiles.TryGetValue(new Vector3(Mathf.Round(targetPosition.x), Mathf.Floor(targetPosition.y), 0), out _tile))
+        {
+            //The enemy doesn't move so it doesn't stay on top of the rock/water
+            targetPosition = transform.position;
+        }
+
         transform.position = targetPosition;
         hasMoved = true;
     }

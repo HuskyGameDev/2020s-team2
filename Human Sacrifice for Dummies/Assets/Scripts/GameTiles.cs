@@ -61,7 +61,7 @@ public class GameTiles : MonoBehaviour
                 WorldLocation = Tilemap.CellToWorld(localPlace),
                 TileBase = Tilemap.GetTile(localPlace),
                 TilemapMember = Tilemap,
-                Name = localPlace.x + "," + localPlace.y,
+                Name = "water",
                 Occupied = false,
                 Cost = 1 // TODO: Change this with the proper cost from ruletile
             };
@@ -80,7 +80,7 @@ public class GameTiles : MonoBehaviour
                 WorldLocation = Tilemap.CellToWorld(localPlace),
                 TileBase = Tilemap.GetTile(localPlace),
                 TilemapMember = Tilemap,
-                Name = localPlace.x + "," + localPlace.y,
+                Name = "rock",
                 Occupied = false,
                 Cost = 1 // TODO: Change this with the proper cost from ruletile
             };
