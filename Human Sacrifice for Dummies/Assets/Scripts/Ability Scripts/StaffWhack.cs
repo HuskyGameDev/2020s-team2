@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-public class StaffWhack : MonoBehaviour
+
+public class StaffWhack : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
 {
+    [SerializeField] public ToolTip toolTip;
     public GameObject playerTurnHandler;
 
     public bool isTurn = false;
@@ -207,5 +210,14 @@ public class StaffWhack : MonoBehaviour
                 }
             }
         }
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        toolTip.DisplayText("StaffWhack");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        toolTip.HideText();
     }
 }
