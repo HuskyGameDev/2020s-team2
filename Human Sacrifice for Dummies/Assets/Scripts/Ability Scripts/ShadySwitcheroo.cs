@@ -76,6 +76,11 @@ public class ShadySwitcheroo : MonoBehaviour, IPointerEnterHandler, IPointerExit
         yield return new WaitForSeconds(1.5f);
         sacrifice.transform.position = startPosition;
         gameObject.transform.position = targetPosition;
+        sacrifice.GetComponent<Animator>().SetBool("isSwitched", true);
+        gameObject.GetComponent<Animator>().SetBool("isSwitched", true);
+        yield return new WaitForSeconds(1.5f);
+        sacrifice.GetComponent<Animator>().SetBool("isSwitched", false);
+        gameObject.GetComponent<Animator>().SetBool("isSwitched", false);
         sacrifice.GetComponent<Animator>().SetBool("isShadySwitching", false);
         gameObject.GetComponent<Animator>().SetBool("isShadySwitching", false);
     }
