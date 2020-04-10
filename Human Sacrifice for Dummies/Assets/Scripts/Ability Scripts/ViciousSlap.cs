@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-public class ViciousSlap : MonoBehaviour
+public class ViciousSlap : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] public ToolTip toolTip;
     public GameObject playerTurnHandler;
 
     public bool isTurn = false;
@@ -269,4 +271,15 @@ public class ViciousSlap : MonoBehaviour
             }
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        toolTip.DisplayText("ViciousSlap");
     }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        toolTip.HideText();
+    }
+
+}

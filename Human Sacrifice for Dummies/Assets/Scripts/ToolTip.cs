@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToolTip: MonoBehaviour
+public class ToolTip : MonoBehaviour
 {
     [SerializeField] private GameObject popupCanvasObject;
     [SerializeField] private RectTransform popupObject;
@@ -17,6 +17,32 @@ public class ToolTip: MonoBehaviour
     {
         popupCanvas = popupCanvasObject.GetComponent<Canvas>();
         popupCanvasObject.SetActive(false);
+
+        //Stops warnings
+        if (popupCanvasObject == null)
+        {
+            popupCanvasObject = null;
+        }
+        if (popupCanvas == null)
+        {
+            popupCanvas = null;
+        }
+        if (popupObject == null)
+        {
+            popupObject = null;
+        }
+       if (textString == null)
+        {
+            textString = null;
+        }
+       if (offset == null)
+        {
+            offset = new Vector3();
+        }
+        if (padding == 0)
+        {
+            padding = 0;
+        }
     }
 
     private void Update()
@@ -48,7 +74,7 @@ public class ToolTip: MonoBehaviour
         popupObject.transform.position = newPos;
     }
 
-    public void DisplayText (string name)
+    public void DisplayText(string name)
     {
         if (name.Equals("StaffWhack"))
         {
@@ -57,6 +83,30 @@ public class ToolTip: MonoBehaviour
         else if (name.Equals("FiendishWisp"))
         {
             textString.text = "Fiendish Wisp";
+        }
+        else if (name.Equals("ViciousSlap"))
+        {
+            textString.text = ("viciousSlap");
+        }
+        else if (name.Equals("ForgottenCurse"))
+        {
+            textString.text = "Forgotten Curse";
+        }
+        else if (name.Equals("InfernalBubble"))
+        {
+            textString.text = "Infernal Bubble";
+        }
+        else if (name.Equals("ShadySwitcheroo"))
+        {
+            textString.text = "shady switcheroo";
+        }
+        else if (name.Equals("ShadowStep"))
+        {
+            textString.text = "shadow step";
+        }
+        else
+        {
+           textString.text = "No desctiption available";
         }
         popupCanvasObject.SetActive(true);
         LayoutRebuilder.ForceRebuildLayoutImmediate(popupObject);

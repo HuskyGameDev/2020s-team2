@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupCanvasObject: {fileID: 4606830498680133294}
   popupObject: {fileID: 4606830499252746781}
-  text: {fileID: 4606830499000228807}
-  offset: {x: 0, y: 25, z: 0}
-  padding: 5
+  textString: {fileID: 4606830499000228807}
+  offset: {x: 0, y: 50, z: 0}
+  padding: 25
 --- !u!1 &4606830498509952887
 GameObject:
   m_ObjectHideFlags: 0
