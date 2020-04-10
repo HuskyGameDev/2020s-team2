@@ -61,13 +61,23 @@ public class ShadySwitcheroo : MonoBehaviour, IPointerEnterHandler, IPointerExit
                 if (worldPoint2 == mousePoint)
                 {
                     GameObject sac = GameObject.FindGameObjectWithTag("Sacrifice");
-                    sac.transform.position = startPosition;
-                    gameObject.transform.position = targetPosition;
-                    FindObjectOfType<AudioManager>().PlaySound("Shady Switcheroo"); // Play Shady Switcheroo Sound
-                    EndAttack();
+                    sac.GetComponent<Animator>().SetBool("isShadySwitching", true);
+                    gameObject.GetComponent<Animator>().SetBool("isShadySwitching", true);
+                    StartCoroutine(SwitchCharacters(sac));
                 }
             }
         }
+    }
+
+    IEnumerator SwitchCharacters(GameObject sacrifice)
+    {
+        FindObjectOfType<AudioManager>().PlaySound("Shady Switcheroo"); // Play Shady Switcheroo Sound
+        EndAttack();
+        yield return new WaitForSeconds(1.5f);
+        sacrifice.transform.position = startPosition;
+        gameObject.transform.position = targetPosition;
+        sacrifice.GetComponent<Animator>().SetBool("isShadySwitching", false);
+        gameObject.GetComponent<Animator>().SetBool("isShadySwitching", false);
     }
 
     void UpdatePosition()

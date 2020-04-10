@@ -1,64 +1,64 @@
 fileFormatVersion: 2
-guid: da4cc588c16381a4487c1b2e512817fa
+guid: 036c7c8e1f2f5a54eaf05569d55df256
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4784849547087159542
-    second: shady-switcheroo_sacrifice_0
+      213: 3159445003349146114
+    second: shady-switcheroo_wizard_0
   - first:
-      213: -8792833439376092665
-    second: shady-switcheroo_sacrifice_1
+      213: 789468490615271393
+    second: shady-switcheroo_wizard_1
   - first:
-      213: -1062608893417642025
-    second: shady-switcheroo_sacrifice_2
+      213: 363185788844289520
+    second: shady-switcheroo_wizard_2
   - first:
-      213: 3496450070975308560
-    second: shady-switcheroo_sacrifice_3
+      213: 2441920852663869985
+    second: shady-switcheroo_wizard_3
   - first:
-      213: 2067012582687507883
-    second: shady-switcheroo_sacrifice_4
+      213: -7201801345181501761
+    second: shady-switcheroo_wizard_4
   - first:
-      213: -7678524808091777144
-    second: shady-switcheroo_sacrifice_5
+      213: -3594616911899159035
+    second: shady-switcheroo_wizard_5
   - first:
-      213: -1198613383037638223
-    second: shady-switcheroo_sacrifice_6
+      213: -898002797672376080
+    second: shady-switcheroo_wizard_6
   - first:
-      213: 7409073748457864449
-    second: shady-switcheroo_sacrifice_7
+      213: 6683618193863764766
+    second: shady-switcheroo_wizard_7
   - first:
-      213: -4016902755147131307
-    second: shady-switcheroo_sacrifice_8
+      213: -57979062878070853
+    second: shady-switcheroo_wizard_8
   - first:
-      213: 8064751947253136901
-    second: shady-switcheroo_sacrifice_9
+      213: -2075454117793007559
+    second: shady-switcheroo_wizard_9
   - first:
-      213: -1339071662648554500
-    second: shady-switcheroo_sacrifice_10
+      213: 5294596652571786657
+    second: shady-switcheroo_wizard_10
   - first:
-      213: -8647573708883110381
-    second: shady-switcheroo_sacrifice_11
+      213: 1215112474655764782
+    second: shady-switcheroo_wizard_11
   - first:
-      213: -105336489277219809
-    second: shady-switcheroo_sacrifice_12
+      213: 1597428510774740847
+    second: shady-switcheroo_wizard_12
   - first:
-      213: 2956062691734839960
-    second: shady-switcheroo_sacrifice_13
+      213: 4957480481043092082
+    second: shady-switcheroo_wizard_13
   - first:
-      213: 7818298045298376210
-    second: shady-switcheroo_sacrifice_14
+      213: -803806503254074897
+    second: shady-switcheroo_wizard_14
   - first:
-      213: 1513234860397659617
-    second: shady-switcheroo_sacrifice_15
+      213: -8659164788690165569
+    second: shady-switcheroo_wizard_15
   - first:
-      213: -2829684615831861966
-    second: shady-switcheroo_sacrifice_16
+      213: -651834747869888712
+    second: shady-switcheroo_wizard_16
   - first:
-      213: -6637128009677715797
-    second: shady-switcheroo_sacrifice_17
+      213: 4773706589766366124
+    second: shady-switcheroo_wizard_17
   - first:
-      213: -1413494415905253273
-    second: shady-switcheroo_sacrifice_18
+      213: 1060706352142331802
+    second: shady-switcheroo_wizard_18
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -143,400 +143,400 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_0
+      name: shady-switcheroo_wizard_0
       rect:
         serializedVersion: 2
         x: 0
         y: 192
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 351b3a07666c1d849a4a661d57fccd46
-      internalID: 4784849547087159542
+      spriteID: 414a0855aa5741242a8ed00c4015e5ec
+      internalID: 3159445003349146114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_1
+      name: shady-switcheroo_wizard_1
       rect:
         serializedVersion: 2
         x: 64
         y: 192
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95b889381718ea943a8fc08f56c1ab33
-      internalID: -8792833439376092665
+      spriteID: 5413ed8076d6ab048be298bd4dad03e1
+      internalID: 789468490615271393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_2
+      name: shady-switcheroo_wizard_2
       rect:
         serializedVersion: 2
         x: 128
         y: 192
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68038cb82272dc844b583c7f90e8fa89
-      internalID: -1062608893417642025
+      spriteID: 7ebae074eef5b1942b423767257723d2
+      internalID: 363185788844289520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_3
+      name: shady-switcheroo_wizard_3
       rect:
         serializedVersion: 2
         x: 192
         y: 192
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b05daf3b97e04c94281b90127a83c3ba
-      internalID: 3496450070975308560
+      spriteID: b149afe833798a5489f80ce152e80832
+      internalID: 2441920852663869985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_4
+      name: shady-switcheroo_wizard_4
       rect:
         serializedVersion: 2
         x: 256
         y: 192
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57fb6b22af359044d9b4ddec59b15e22
-      internalID: 2067012582687507883
+      spriteID: 2d2fcc6ad987b8c42b343e5b5977b792
+      internalID: -7201801345181501761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_5
+      name: shady-switcheroo_wizard_5
       rect:
         serializedVersion: 2
         x: 0
         y: 128
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f5a176d61e43740a952ecce4108c28
-      internalID: -7678524808091777144
+      spriteID: 34f35b8bf3b1b0c4480661c2c0d79077
+      internalID: -3594616911899159035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_6
+      name: shady-switcheroo_wizard_6
       rect:
         serializedVersion: 2
         x: 64
         y: 128
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3756ff0729583a345aeac21a1274f52f
-      internalID: -1198613383037638223
+      spriteID: d4c3584d019b43648ab8c735151e5037
+      internalID: -898002797672376080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_7
+      name: shady-switcheroo_wizard_7
       rect:
         serializedVersion: 2
         x: 128
         y: 128
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1675caa1674e3794ab868c35ae7377fd
-      internalID: 7409073748457864449
+      spriteID: 839e428d888b065429a830bd437ed5ad
+      internalID: 6683618193863764766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_8
+      name: shady-switcheroo_wizard_8
       rect:
         serializedVersion: 2
         x: 192
         y: 128
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13604200b26848640b5cc9d077855235
-      internalID: -4016902755147131307
+      spriteID: 3da375d666b48534db374820d55d57b4
+      internalID: -57979062878070853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_9
+      name: shady-switcheroo_wizard_9
       rect:
         serializedVersion: 2
         x: 256
         y: 128
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 870b41cf6d552ba4db213cea0fb7a8eb
-      internalID: 8064751947253136901
+      spriteID: 53cb047ef0383384384ad40d8ebbfec6
+      internalID: -2075454117793007559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_10
+      name: shady-switcheroo_wizard_10
       rect:
         serializedVersion: 2
         x: 0
         y: 64
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e02275baa3d9b4547a619959e60cbb4a
-      internalID: -1339071662648554500
+      spriteID: e2a766346598c0141b108d6178985adb
+      internalID: 5294596652571786657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_11
+      name: shady-switcheroo_wizard_11
       rect:
         serializedVersion: 2
         x: 64
         y: 64
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0690368154a768418c20b41877181bb
-      internalID: -8647573708883110381
+      spriteID: fc0b20b833a6f4049ad2eab8209a5762
+      internalID: 1215112474655764782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_12
+      name: shady-switcheroo_wizard_12
       rect:
         serializedVersion: 2
         x: 128
         y: 64
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca16b64567b23b4f9215584cd29f0de
-      internalID: -105336489277219809
+      spriteID: dd05d6afa287b934ba3cabf4377e5870
+      internalID: 1597428510774740847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_13
+      name: shady-switcheroo_wizard_13
       rect:
         serializedVersion: 2
         x: 192
         y: 64
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1751e1196eaa6d4488ca43577fdeec26
-      internalID: 2956062691734839960
+      spriteID: 1f048c11e048064439ae7a7cf63bda3e
+      internalID: 4957480481043092082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_14
+      name: shady-switcheroo_wizard_14
       rect:
         serializedVersion: 2
         x: 256
         y: 64
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c47c014ae873ad41bec192cc01a6a0e
-      internalID: 7818298045298376210
+      spriteID: 75a93c66024773e4284e0001aa946ba8
+      internalID: -803806503254074897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_15
+      name: shady-switcheroo_wizard_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93d52331ecbbe5642bdc2c4d235a0103
-      internalID: 1513234860397659617
+      spriteID: 830c423821864ff448fee9fa9ca2ddb4
+      internalID: -8659164788690165569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_16
+      name: shady-switcheroo_wizard_16
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 527d663a33149134ab5f6df0f901417e
-      internalID: -2829684615831861966
+      spriteID: e6a27ce4faaa0fd48b4e9287fdd56884
+      internalID: -651834747869888712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_17
+      name: shady-switcheroo_wizard_17
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5f00a92a62296b4ab55adb22d808214
-      internalID: -6637128009677715797
+      spriteID: b912ea027e2f8cb469aae928d477cc8e
+      internalID: 4773706589766366124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shady-switcheroo_sacrifice_18
+      name: shady-switcheroo_wizard_18
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3950724b7381143478ea769fc665a0ac
-      internalID: -1413494415905253273
+      spriteID: 4b55aa7e3d0e93745a34cb95bbb929b1
+      internalID: 1060706352142331802
       vertices: []
       indices: 
       edges: []

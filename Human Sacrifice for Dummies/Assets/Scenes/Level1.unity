@@ -2793,6 +2793,11 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 8381120486095106222, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: playerTurnHandler
+      value: 
+      objectReference: {fileID: 1241554508}
     - target: {fileID: 6446763875033370850, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: hud
@@ -2952,3 +2957,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 290534407166059239}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &8863650431738870349
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863650431738870348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4309db37855e6714ba7ac623988852f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
