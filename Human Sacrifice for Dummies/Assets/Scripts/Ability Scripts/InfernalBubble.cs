@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class InfernalBubble : MonoBehaviour
 {
     public GameObject playerTurnHandler;
+    public GameObject animationObject;
 
     public bool isTurn = false;
     public bool hasSearched = false;
@@ -59,6 +60,7 @@ public class InfernalBubble : MonoBehaviour
                 if (worldPoint1 == mousePoint)
                 {
                     FindObjectOfType<AudioManager>().PlaySound("Infernal Bubble (Form)"); // Play Infernal Bubble Form Sound
+                    Instantiate(animationObject, new Vector3(worldPoint1.x, worldPoint1.y + .5f, 0), Quaternion.identity);
                     gameObject.GetComponent<PlayerMovement>().bubble = true;
                     EndAttack();
                 }
@@ -67,6 +69,7 @@ public class InfernalBubble : MonoBehaviour
                 if (worldPoint2 == mousePoint)
                 {
                     FindObjectOfType<AudioManager>().PlaySound("Infernal Bubble (Form)"); // Play Infernal Bubble Form Sound
+                    Instantiate(animationObject, new Vector3(worldPoint2.x, worldPoint2.y + .5f, 0), Quaternion.identity);
                     GameObject sac = GameObject.FindGameObjectWithTag("Sacrifice");
                     sac.GetComponent<PlayerMovement>().bubble = true;
                     EndAttack();

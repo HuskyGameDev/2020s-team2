@@ -2771,6 +2771,17 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 6798258275247931601, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: isTurn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798258275247931601, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: animationObject
+      value: 
+      objectReference: {fileID: 8920709672094086151, guid: ef983402be6089446bc15d781cfc9a42,
+        type: 3}
     - target: {fileID: 8381120486095106222, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: hud
@@ -2786,6 +2797,12 @@ PrefabInstance:
       propertyPath: playerTurnHandler
       value: 
       objectReference: {fileID: 1241554508}
+    - target: {fileID: 6446763875033370850, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: animationObject
+      value: 
+      objectReference: {fileID: 8695529665830446508, guid: cf7ae58dd69dd074d9d40702a421527b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2cd92e9df3a15458ce07a7f83b82e6, type: 3}
 --- !u!1001 &7376109296261855555
@@ -2876,12 +2893,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTurnHandler: {fileID: 1241554508}
+  animationObject: {fileID: 3279247763282520671, guid: 9e6393221390e8b46b91bb4a0b5a095c,
+    type: 3}
   isTurn: 0
   hasSearched: 0
   startPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   tempPosition: {x: 0, y: 0}
   hud: {fileID: 930549758}
+--- !u!95 &8863650431141835660
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863650431141835658}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95c9e48a007da0e479f17c52e66f901c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8863650431141835666
 MonoBehaviour:
   m_ObjectHideFlags: 0
