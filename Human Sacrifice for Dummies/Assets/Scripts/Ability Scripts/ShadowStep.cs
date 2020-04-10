@@ -8,7 +8,7 @@ public class ShadowStep : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     [SerializeField] public ToolTip toolTip;
     public GameObject playerTurnHandler;
-    public GameObject animationObject;
+    [SerializeField] GameObject animationObject;
 
     public bool isTurn = false;
     public bool hasSearched = false;

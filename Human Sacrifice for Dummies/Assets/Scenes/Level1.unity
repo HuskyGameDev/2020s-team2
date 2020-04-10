@@ -2761,6 +2761,12 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 6798258275247931611, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: animationObject
+      value: 
+      objectReference: {fileID: 679534132835764413, guid: 5a463aea6a9c2324282e70d34e52f456,
+        type: 3}
     - target: {fileID: 6798258275247931601, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: playerTurnHandler
@@ -2892,6 +2898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a626257d5874846ab8a73b66dc6c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolTip: {fileID: 0}
   playerTurnHandler: {fileID: 1241554508}
   animationObject: {fileID: 3279247763282520671, guid: 9e6393221390e8b46b91bb4a0b5a095c,
     type: 3}
@@ -2932,6 +2939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7e37529798d3345acf0738b2285119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolTip: {fileID: 0}
   playerTurnHandler: {fileID: 1241554508}
   isTurn: 0
   hasSearched: 0
