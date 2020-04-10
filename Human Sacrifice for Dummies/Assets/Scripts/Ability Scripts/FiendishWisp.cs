@@ -8,6 +8,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     [SerializeField] public ToolTip toolTip;
     public GameObject playerTurnHandler;
+    public GameObject animationObject;
 
     public bool isTurn = false;
     public bool hasSearched = false;
@@ -88,6 +89,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                     playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }
             }
+            Instantiate(animationObject, gameObject.transform.position + new Vector3(0, -.1f, -1), gameObject.transform.rotation, gameObject.transform);
         }
     }
 

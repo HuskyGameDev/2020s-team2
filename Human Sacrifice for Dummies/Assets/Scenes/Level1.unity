@@ -2771,6 +2771,17 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 6798258275247931601, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: isTurn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798258275247931601, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: animationObject
+      value: 
+      objectReference: {fileID: 8920709672094086151, guid: ef983402be6089446bc15d781cfc9a42,
+        type: 3}
     - target: {fileID: 8381120486095106222, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: hud
