@@ -89,7 +89,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                     playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }
             }
-            Instantiate(animationObject, gameObject.transform.position + new Vector3(0, -.1f, -1), gameObject.transform.rotation, gameObject.transform);
+           
         }
     }
 
@@ -206,6 +206,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         ClearColors();
         hasSearched = false;
         isTurn = false;
+        Instantiate(animationObject, gameObject.transform.position + new Vector3(0, -.1f, -1), gameObject.transform.rotation, gameObject.transform);
         playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = true;
         
     }
