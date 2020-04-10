@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-public class ForgottenCurse : MonoBehaviour
+public class ForgottenCurse : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] public ToolTip toolTip;
     public GameObject playerTurnHandler;
 
     public bool isTurn = false;
@@ -208,4 +210,15 @@ public class ForgottenCurse : MonoBehaviour
             }
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        toolTip.DisplayText("ForgottenCurse");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        toolTip.HideText();
+    }
+
 }

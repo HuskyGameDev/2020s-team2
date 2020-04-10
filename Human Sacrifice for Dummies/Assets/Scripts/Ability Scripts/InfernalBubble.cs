@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-public class InfernalBubble : MonoBehaviour
+public class InfernalBubble : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] public ToolTip toolTip;
     public GameObject playerTurnHandler;
     public GameObject animationObject;
 
@@ -118,6 +120,16 @@ public class InfernalBubble : MonoBehaviour
             _tile.TilemapMember.SetColor(_tile.LocalPlace, Color.white);
         }
 
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        toolTip.DisplayText("InfernalBubble");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        toolTip.HideText();
     }
 
 }
