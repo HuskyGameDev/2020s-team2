@@ -2893,6 +2893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTurnHandler: {fileID: 1241554508}
+  animationObject: {fileID: 3279247763282520671, guid: 9e6393221390e8b46b91bb4a0b5a095c,
+    type: 3}
   isTurn: 0
   hasSearched: 0
   startPosition: {x: 0, y: 0}
