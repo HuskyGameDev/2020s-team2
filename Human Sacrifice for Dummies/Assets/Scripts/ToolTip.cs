@@ -61,7 +61,7 @@ public class ToolTip : MonoBehaviour
         {
             newPos.x += rightEdgeToScreenEdgeDistance;
         }
-        float leftEdgeToScreenEdgeDistance = 0 - (newPos.x + popupObject.rect.width * popupCanvas.scaleFactor / 2) + padding;
+        float leftEdgeToScreenEdgeDistance = 0 - (newPos.x - popupObject.rect.width * popupCanvas.scaleFactor / 2) + padding;
         if (leftEdgeToScreenEdgeDistance > 0)
         {
             newPos.x += leftEdgeToScreenEdgeDistance;
@@ -78,35 +78,35 @@ public class ToolTip : MonoBehaviour
     {
         if (name.Equals("StaffWhack"))
         {
-            textString.text = "sample text";
+            textString.text = "A standard melee attack against an adjacent foe that deals two damage";
         }
         else if (name.Equals("FiendishWisp"))
         {
-            textString.text = "Fiendish Wisp";
+            textString.text = "A projectile attack with a range of three. It deals one damage to the\nfirst enemy it hits, and it can only travel in a straight line";
         }
         else if (name.Equals("ViciousSlap"))
         {
-            textString.text = ("viciousSlap");
+            textString.text = ("A melee attack that deals one damage and knocks the enemy back one space");
         }
         else if (name.Equals("ForgottenCurse"))
         {
-            textString.text = "Forgotten Curse";
+            textString.text = "A melee attack against an adjacent enemy prevents them from moving on\ntheir next turn";
         }
         else if (name.Equals("InfernalBubble"))
         {
-            textString.text = "Infernal Bubble";
+            textString.text = "Creates a shield around either you or your sacrifice that lasts for one\nturn. It nullifies the next attack that your unit would take";
         }
         else if (name.Equals("ShadySwitcheroo"))
         {
-            textString.text = "shady switcheroo";
+            textString.text = "Makes the sacrifice and necromancer to switch places on the map";
         }
         else if (name.Equals("ShadowStep"))
         {
-            textString.text = "shadow step";
+            textString.text = "Increases the movement range of both the necromancer and the sacrifice by\none space for the next turn";
         }
         else
         {
-           textString.text = "No desctiption available";
+            textString.text = "No desctiption available";
         }
         popupCanvasObject.SetActive(true);
         LayoutRebuilder.ForceRebuildLayoutImmediate(popupObject);
