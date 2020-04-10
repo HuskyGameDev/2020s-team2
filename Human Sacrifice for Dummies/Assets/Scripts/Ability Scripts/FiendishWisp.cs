@@ -118,7 +118,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         var tiles = GameTiles.instance.tiles;
 
-        for (int a = 0; a < 3; a++)
+        for (int a = 0; a < 5; a++)
         {
             Vector3Int up = new Vector3Int(currentPos.x, currentPos.y + 1 + a, 0);
             if (tiles.TryGetValue(up, out _tile))
@@ -139,7 +139,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         var tiles = GameTiles.instance.tiles;
 
-        for (int a = 0; a < 3; a++)
+        for (int a = 0; a < 5; a++)
         {
             Vector3Int left = new Vector3Int(currentPos.x - 1 - a, currentPos.y, 0);
             if (tiles.TryGetValue(left, out _tile))
@@ -160,7 +160,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         var tiles = GameTiles.instance.tiles;
 
-        for (int a = 0; a < 3; a++)
+        for (int a = 0; a < 5; a++)
         {
             Vector3Int down = new Vector3Int(currentPos.x, currentPos.y - 1 - a, 0);
             if (tiles.TryGetValue(down, out _tile))
@@ -181,7 +181,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         var tiles = GameTiles.instance.tiles;
 
-        for (int a = 0; a < 3; a++)
+        for (int a = 0; a < 5; a++)
         {
             Vector3Int right = new Vector3Int(currentPos.x + 1 + a, currentPos.y, 0);
             if (tiles.TryGetValue(right, out _tile))
