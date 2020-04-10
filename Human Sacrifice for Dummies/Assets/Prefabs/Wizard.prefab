@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e85ae3961607184b80400c18b667cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolTip: {fileID: 0}
   playerTurnHandler: {fileID: 0}
   isTurn: 0
   hasSearched: 0
@@ -204,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716c0300000911a478c98e51a8eb6da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolTip: {fileID: 0}
   playerTurnHandler: {fileID: 0}
   isTurn: 0
   hasSearched: 0
@@ -223,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTurnHandler: {fileID: 0}
-  animationObject: {fileID: 8695529665830446508, guid: cf7ae58dd69dd074d9d40702a421527b,
+  animationObject: {fileID: 1108045045672520592, guid: cc0137ac707b63b4195cad1255e70539,
     type: 3}
   isTurn: 0
   hasSearched: 0
