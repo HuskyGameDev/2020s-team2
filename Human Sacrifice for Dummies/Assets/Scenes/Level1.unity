@@ -2691,6 +2691,12 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 3189380412475788771, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: animationObject
+      value: 
+      objectReference: {fileID: 8237416031685585704, guid: 81205fdc5e96f2145a038a0aa2643d5e,
+        type: 3}
     - target: {fileID: 5135332315781893582, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: m_LocalPosition.x
