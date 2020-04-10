@@ -767,6 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolTip: {fileID: 1313266150}
   playerTurnHandler: {fileID: 0}
+  animationObject: {fileID: 0}
   isTurn: 0
   hasSearched: 0
   startPosition: {x: 0, y: 0}
@@ -1216,6 +1217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolTip: {fileID: 1313266150}
   playerTurnHandler: {fileID: 0}
+  animationObject: {fileID: 0}
   isTurn: 0
   hasSearched: 0
   startPosition: {x: 0, y: 0}
@@ -2795,7 +2797,7 @@ PrefabInstance:
     - target: {fileID: 4606830499000228801, guid: d19fa3ab361d5994f9384ed7938d8ba9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4606830499000228801, guid: d19fa3ab361d5994f9384ed7938d8ba9,
         type: 3}
