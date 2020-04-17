@@ -3,7 +3,11 @@ guid: 716c0300000911a478c98e51a8eb6da2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - toolTip: {instanceID: 0}
+  - playerTurnHandler: {instanceID: 0}
+  - animationObject: {instanceID: 0}
+  - hud: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

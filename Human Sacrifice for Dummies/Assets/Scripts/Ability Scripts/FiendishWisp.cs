@@ -24,8 +24,9 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         if (isTurn)
         {
-            UpdatePosition();
 
+            UpdatePosition();
+            
             var tiles = GameTiles.instance.tiles;
             var worldPoint = new Vector3Int(Mathf.RoundToInt(startPosition.x), Mathf.FloorToInt(startPosition.y), 0);
 
@@ -73,6 +74,8 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                         // damage target
                         FindObjectOfType<AudioManager>().PlaySound("Fiendish Wisp");
                         FiendishWispDoDamage(pos);
+                        Instantiate(animationObject, startPosition, animationObject.transform.rotation, animationObject.transform);
+                        animationObject.transform.position = Vector3.Lerp(animationObject.transform.position, targetPosition, Time.deltaTime);
                         EndAttack();
                     }
                 }
@@ -85,7 +88,7 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                     hud.buttonUsed[1] = false;
                     hud.buttonUsed[2] = false;
                     EndAttack();
-                    
+                   
                     playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = false;
                 }
             }
@@ -206,7 +209,8 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         ClearColors();
         hasSearched = false;
         isTurn = false;
-        Instantiate(animationObject, gameObject.transform.position + new Vector3(0, -.1f, -1), gameObject.transform.rotation, gameObject.transform);
+       
+        
         playerTurnHandler.GetComponent<PlayerTurnHandlerScript>().wizardHasAttacked = true;
         
     }
