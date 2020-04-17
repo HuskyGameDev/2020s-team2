@@ -2691,6 +2691,12 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 3189380412475788771, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: animationObject
+      value: 
+      objectReference: {fileID: 8237416031685585704, guid: 81205fdc5e96f2145a038a0aa2643d5e,
+        type: 3}
     - target: {fileID: 5135332315781893582, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2761,6 +2767,12 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 6798258275247931611, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: animationObject
+      value: 
+      objectReference: {fileID: 679534132835764413, guid: 5a463aea6a9c2324282e70d34e52f456,
+        type: 3}
     - target: {fileID: 6798258275247931601, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: playerTurnHandler
@@ -2787,6 +2799,11 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 930549758}
+    - target: {fileID: 8381120486095106222, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
+        type: 3}
+      propertyPath: playerTurnHandler
+      value: 
+      objectReference: {fileID: 1241554508}
     - target: {fileID: 6446763875033370850, guid: 5e2cd92e9df3a15458ce07a7f83b82e6,
         type: 3}
       propertyPath: hud
@@ -2946,3 +2963,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 290534407166059239}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &8863650431738870349
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863650431738870348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4309db37855e6714ba7ac623988852f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 62c6f4229d3847548a7457fbcd55aa04
+guid: 46c145928a47f874cbaa7e4df31f4ff2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3723523041543329588
-    second: staff-whack_0
+      213: 6757680150649103381
+    second: vicious-slap_0
   - first:
-      213: 389013600793384872
-    second: staff-whack_1
+      213: 4689198721874390921
+    second: vicious-slap_1
   - first:
-      213: -303966150608278463
-    second: staff-whack_2
+      213: 4985476291278588881
+    second: vicious-slap_2
   - first:
-      213: -99809130211217668
-    second: staff-whack_3
+      213: 4529229693021285400
+    second: vicious-slap_3
   - first:
-      213: -4800813252276014896
-    second: staff-whack_4
+      213: -7577819227093396794
+    second: vicious-slap_4
+  - first:
+      213: 4603305288965479431
+    second: vicious-slap_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -60,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,11 +104,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: staff-whack_0
+      name: vicious-slap_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -115,18 +118,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acba3404677f2c847b465ccb394d5d4c
-      internalID: -3723523041543329588
+      spriteID: f14b342a6257b6d43a079eac0e194d8d
+      internalID: 6757680150649103381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staff-whack_1
+      name: vicious-slap_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 66
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -136,18 +139,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef9d195803595bb4bba60eef749a60ba
-      internalID: 389013600793384872
+      spriteID: 249992d35083cc145ae1a20f858d872a
+      internalID: 4689198721874390921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staff-whack_2
+      name: vicious-slap_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 66
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -157,18 +160,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8741b68d6398eb84cb33a9fc80134849
-      internalID: -303966150608278463
+      spriteID: 33f9657c40302064ca59077af45ba326
+      internalID: 4985476291278588881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staff-whack_3
+      name: vicious-slap_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -178,18 +181,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf95481598f7d0145869e720dd18c2d0
-      internalID: -99809130211217668
+      spriteID: 3fe29811562e54340a787bd0425f53ee
+      internalID: 4529229693021285400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: staff-whack_4
+      name: vicious-slap_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -199,8 +202,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccb9fcd40726b6e40a0e9a0539d9bb8e
-      internalID: -4800813252276014896
+      spriteID: b0c91ace02c0b814a991c988a508d121
+      internalID: -7577819227093396794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vicious-slap_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d003bbed1e59874caaef858828ecadc
+      internalID: 4603305288965479431
       vertices: []
       indices: 
       edges: []

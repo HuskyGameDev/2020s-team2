@@ -9,6 +9,7 @@ public class StaffWhack : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     [SerializeField] public ToolTip toolTip;
     public GameObject playerTurnHandler;
+    [SerializeField] GameObject animationObject;
 
     public bool isTurn = false;
     public bool hasSearched = false;
@@ -72,6 +73,7 @@ public class StaffWhack : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                     {
                         // damage target
                         FindObjectOfType<AudioManager>().PlaySound("Staff Whack");
+                        Instantiate(animationObject, new Vector3(pos.x, pos.y + .5f, 0), Quaternion.identity);
                         StaffWhackDoDamage(pos);
                         EndAttack();
                     }
