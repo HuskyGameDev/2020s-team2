@@ -74,8 +74,8 @@ public class FiendishWisp : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                         // damage target
                         FindObjectOfType<AudioManager>().PlaySound("Fiendish Wisp");
                         FiendishWispDoDamage(pos);
-                        Instantiate(animationObject, startPosition, animationObject.transform.rotation, animationObject.transform);
-                        animationObject.transform.position = Vector3.Lerp(animationObject.transform.position, targetPosition, Time.deltaTime);
+                        Instantiate(animationObject, gameObject.transform.position, animationObject.transform.rotation);
+                        animationObject.transform.position = Vector3.Lerp(animationObject.transform.position, pos, Time.deltaTime);
                         EndAttack();
                     }
                 }
